@@ -38,22 +38,24 @@
     </div>
 
     <div class="field">
-      <p>Genero:</p>
+      <p>Género:</p>
     </div>
 
-    <div class="row">
-      <%= f.radio_button :gender, 'Masculino' %><br />
-      <%= f.label :gender, "Masculino", :value => "Masculino" %>
-    </div>
+    <div class="text-center">
+        <div class="row">
+          <%= f.radio_button :gender, 'Masculino' %><br />
+          <%= f.label :gender, "Masculino", :value => "Masculino" %>
+        </div>
 
-    <div class="row">
-      <%= f.radio_button :gender, 'Femenino' %><br />
-      <%= f.label :gender, "Femenino", :value => "Femenino" %>
-    </div>
+        <div class="row">
+          <%= f.radio_button :gender, 'Femenino' %><br />
+          <%= f.label :gender, "Femenino", :value => "Femenino" %>
+        </div>
 
-    <div class="row">
-      <%= f.radio_button :gender, 'Género no Binario' %><br />
-      <%= f.label :gender, "Género no Binario", :value => "Género no binario" %>
+        <div class="row">
+          <%= f.radio_button :gender, 'Género no Binario' %><br />
+          <%= f.label :gender, "Género no Binario", :value => "Género no binario" %>
+        </div>
     </div>
 
     <div class="actions">

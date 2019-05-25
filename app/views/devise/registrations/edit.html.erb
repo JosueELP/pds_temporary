@@ -1,6 +1,6 @@
 <%= render "partials/nav" %>
 <div class="small-container center-block">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>Editar <%= resource_name.to_s.humanize %></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -49,24 +49,24 @@
       </div>
 
       <div class="field">
-        <p>Genero:</p>
+        <p>Género:</p>
       </div>
+      <div class="text-center">
+        <div class="row">
+          <%= f.radio_button :gender, 'Masculino' %><br />
+          <%= f.label :gender, "Masculino", :value => "Masculino" %>
+        </div>
 
-      <div class="row">
-        <%= f.radio_button :gender, 'Masculino' %><br />
-        <%= f.label :gender, "Masculino", :value => "Masculino" %>
+        <div class="row">
+          <%= f.radio_button :gender, 'Femenino' %><br />
+          <%= f.label :gender, "Femenino", :value => "Femenino" %>
+        </div>
+
+        <div class="row">
+          <%= f.radio_button :gender, 'Género no Binario' %><br />
+          <%= f.label :gender, "Género no Binario", :value => "Género no binario" %>
+        </div>
       </div>
-
-      <div class="row">
-        <%= f.radio_button :gender, 'Femenino' %><br />
-        <%= f.label :gender, "Femenino", :value => "Femenino" %>
-      </div>
-
-      <div class="row">
-        <%= f.radio_button :gender, 'Género no Binario' %><br />
-        <%= f.label :gender, "Género no Binario", :value => "Género no binario" %>
-      </div>
-
     <div class="actions">
       <%= f.submit "Actualizar", class:"btn btn-primary" %>
     </div>
