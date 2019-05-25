@@ -1,0 +1,126 @@
+@import '~bootstrap/scss/bootstrap';
+/* Clases para la pagina principal */
+.info{
+    padding-top: 10px;
+}
+.title{
+    padding-top: .75em;
+    padding-bottom: 1em;
+}
+div.container1 button{
+    background-color: #3C4647;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 80px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+div.container2 button{
+    background-color: #3C4647;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 80px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+div.container1{
+    width: 100%;
+    display: inline-block;
+    text-align:center;
+    margin-bottom: 3em;;
+}
+div.container2{
+    width: 100%;
+    display: inline-block;
+    text-align:center;
+}
+div.container1 button:hover{
+    background-color: #ddd;
+}
+div.container2 button:hover{
+    background-color: #ddd;
+}
+.deliveryButton{
+    float:left;
+    margin-left: 180px;
+}
+
+.registryButton{
+    display: inline-block;
+    margin:0 auto;
+}
+
+.doneButton{
+    float:right;
+    margin-right: 180px;
+}
+
+.importButton{
+    float: left;
+    margin-left: 180px;
+}
+
+.exportButton{
+    display: inline-block;
+    margin:10 auto;
+}
+
+.inventaryButton{
+    float: right;
+    margin-right: 180px;
+}
+/* Clases para el formulario */
+.margin-top{
+    margin-top: 1.5em;
+}
+.small-container{
+    width: 100%;
+    max-width: 650px;
+}
+.large-container{
+    width: 100%;
+    max-width: 960px;
+}
+.center-block{
+    margin: 0 auto;
+}
+.padding{
+    padding: 10px 15px;
+}
+.field{
+    @extend .margin-top;
+    label{
+        @extend .text-uppercase;
+        @extend .text-secondary;
+    }
+    &:first-of-type{
+        margin-top: 0;
+    }
+    input{
+        @extend .form-control;
+        @extend .bg-light;
+    }
+    input[type='checkbox']{
+        display: inline-block;
+        width:auto;
+        vertical-align: middle;
+        margin-right: 0.5em;
+    }
+}
+
+.row{
+    display: inline-block;
+    margin-right: 3em;
+}
+.inline-block{
+    display: inline-block;
+}
+.margin-bottom{
+    margin-bottom: 0;
+}
