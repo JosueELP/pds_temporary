@@ -5,9 +5,55 @@
     </li>
 </nav>
 <!-- -->
-<%= render "partials/nav"%>
-<h1 class="text-center title">PACKAGE DELIVERY SYSTEM</h1>
-
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <%= render "partials/nav"%>
+    <div class="container-fluid contenedorInicio">
+      <h1 class="text-center title" style="color: #018FA2;">PACKAGE DELIVERY SYSTEM</h1>
+      <div class="container text-center py-3">
+        <div class="row">
+          <div class="col">
+            <button type="button" name="button1" class="btn bigBtn">
+              <%=image_tag("entregar.png")%>
+              <br>Entregar</button>
+          </div>
+          <div class="col">
+            <button type="button" name="button2" class="btn bigBtn">
+              <%=image_tag("registrar.png",class:"bntIcon")%>
+            <br>Registrar</button>
+          </div>
+          <div class="col">
+            <button type="button" name="button3" class="btn bigBtn">
+              <%=image_tag("realizado.png")%>
+              <br>Entregados</button>
+          </div>
+        </div>
+        <div class="row py-4">
+          <div class="col">
+            <button type="button" name="button4"class="btn bigBtn" >
+              <%=image_tag("importar.png")%>
+              <br>Importar</button>
+          </div>
+          <div class="col">
+            <button type="button" name="button5" class="btn bigBtn">
+              <%=image_tag("exportar.png")%>
+              <br>Exportar</button>
+          </div>
+          <div class="col">
+            <button type="button" name="button6" class="btn bigBtn">
+              <%=image_tag("inventario.png")%>
+              <br>Inventario</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- >
 <div class="container1">
     <div class="deliveryButton">
         <button type="button" name="buttonDelivery" class="btn">
@@ -37,3 +83,4 @@
         <button type="button" name="buttonInventary" class="btn">Inventario</button>
     </div>
 </div>
+<!-- -->

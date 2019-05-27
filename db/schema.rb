@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_235236) do
+ActiveRecord::Schema.define(version: 2019_05_27_014152) do
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "brand"
+    t.integer "year"
+    t.string "model"
+    t.string "color"
+    t.string "licence_plate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "workers", force: :cascade do |t|
     t.string "email", default: "", null: false

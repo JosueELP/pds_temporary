@@ -1,80 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
 /* Clases para la pagina principal */
-.info{
-    padding-top: 10px;
+
+.contenedorInicio{
+  background-color: #2C3635;
 }
-.title{
-    padding-top: .75em;
-    padding-bottom: 1em;
-}
-div.container1 button{
-    background-color: #3C4647;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 80px 80px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-div.container2 button{
-    background-color: #3C4647;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 80px 80px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-div.container1{
-    width: 100%;
-    display: inline-block;
-    text-align:center;
-    margin-bottom: 3em;;
-}
-div.container2{
-    width: 100%;
-    display: inline-block;
-    text-align:center;
-}
-div.container1 button:hover{
-    background-color: #ddd;
-}
-div.container2 button:hover{
-    background-color: #ddd;
-}
-.deliveryButton{
-    float:left;
-    margin-left: 180px;
+body{
+    background-color:  #2C3635;
 }
 
-.registryButton{
-    display: inline-block;
-    margin:0 auto;
+.bigBtn{
+  background-color: #3C4647;
+  color: white;
+}
+.bigBtn:hover{
+  color: #018FA2;
+  filter: saturate(3);
 }
 
-.doneButton{
-    float:right;
-    margin-right: 180px;
-}
-
-.importButton{
-    float: left;
-    margin-left: 180px;
-}
-
-.exportButton{
-    display: inline-block;
-    margin:10 auto;
-}
-
-.inventaryButton{
-    float: right;
-    margin-right: 180px;
-}
 /* Clases para el formulario */
 .margin-top{
     margin-top: 1.5em;
@@ -114,13 +56,28 @@ div.container2 button:hover{
     }
 }
 
-.row{
-    display: inline-block;
-    margin-right: 3em;
-}
+
 .inline-block{
     display: inline-block;
 }
 .margin-bottom{
     margin-bottom: 0;
+}
+
+.nav-link{
+  color: white;
+}
+
+.navegador{
+  background-color: #3C4647;
+}
+
+h1{
+  color:#018FA2;
+}
+h2{
+  color:white;
+}
+.fieldTitle{
+  color: #D1D1D1;
 }

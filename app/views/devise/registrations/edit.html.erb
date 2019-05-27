@@ -6,7 +6,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :email, "Correo electronico" %><br />
+      <%= f.label :email, "Correo electronico" , :class=>"fieldTitle" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
@@ -15,66 +15,72 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password, "Contraseña" %> <i>(dejalo vacio si no la quieres cambiar)</i><br />
+      <%= f.label :password, "Contraseña" , :class=>"fieldTitle"%> <i style="color:white;">(dejalo vacio si no la quieres cambiar)</i><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
       <% if @minimum_password_length %>
         <br />
-        <em><%= @minimum_password_length %> caracteres minimos</em>
+        <em style="color:white;"><%= @minimum_password_length %> caracteres minimos</em>
       <% end %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
+      <%= f.label :password_confirmation, "Confirmar contraseña", :class=>"fieldTitle" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos tu contraseña actual para hacer los cambios)</i><br />
+      <%= f.label :current_password, "Contraseña actual" , :class=>"fieldTitle"%> <i>(necesitamos tu contraseña actual para hacer los cambios)</i><br />
       <%= f.password_field :current_password, autocomplete: "current-password" %>
     </div>
 
     <div class="field">
-        <%= f.label :name, "nombre" %><br />
+        <%= f.label :name, "nombre", :class=>"fieldTitle" %><br />
         <%= f.text_field :name, autocomplete: "nombre" %>
       </div>
 
       <div class="field">
-        <%= f.label :last_name, "apellidos" %><br />
+        <%= f.label :last_name, "apellidos", :class=>"fieldTitle" %><br />
         <%= f.text_field :last_name, autocomplete: "last-name" %>
       </div>
 
-      <div class="field">
-        <%= f.label :phone, "telefono" %><br />
+      <div class="field" style="color: #D1D1D1;">
+        <%= f.label :phone, "teléfono", :class=>"fieldTitle" %><br />
         <%= f.text_field :phone, autocomplete: "phone-number" %>
       </div>
 
       <div class="field">
-        <p>Género:</p>
+        <p style="color:white;">Género:</p>
       </div>
       <div class="text-center">
         <div class="row">
-          <%= f.radio_button :gender, 'Masculino' %><br />
-          <%= f.label :gender, "Masculino", :value => "Masculino" %>
+          <div class="col">
+            <%= f.radio_button :gender, 'Masculino' %>
+            <%= f.label :gender, "Masculino", :value => "  Masculino", :class=>"fieldTitle" %>
+          </div>
+          <div class="col">
+            <%= f.radio_button :gender, 'Femenino' %>
+            <%= f.label :gender, "Femenino", :value => "  Femenino" , :class=>"fieldTitle"%>
+          </div>
+          <div class="col">
+            <%= f.radio_button :gender, 'Género no Binario' %>
+            <%= f.label :gender, "Género no Binario", :value => "No binario", :class=>"fieldTitle" %>
+          </div>
         </div>
 
-        <div class="row">
-          <%= f.radio_button :gender, 'Femenino' %><br />
-          <%= f.label :gender, "Femenino", :value => "Femenino" %>
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <%= f.submit "Actualizar", class:"btn btn-primary" %>
         </div>
-
-        <div class="row">
-          <%= f.radio_button :gender, 'Género no Binario' %><br />
-          <%= f.label :gender, "Género no Binario", :value => "Género no binario" %>
+        <div class="col">
+          <p><%= button_to "Cancela mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-secondary" %></p>
+        </div>
+        <div class="col">
+            <%= link_to "ir Atras", :back %>
         </div>
       </div>
     <div class="actions">
-      <%= f.submit "Actualizar", class:"btn btn-primary" %>
+
     </div>
   <% end %>
-
-  <h3>Cancela mi cuenta</h3>
-
-  <p>Triste? <%= button_to "Cancela mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-secondary" %></p>
-
-  <%= link_to "ir Atras", :back %>
 </div>
