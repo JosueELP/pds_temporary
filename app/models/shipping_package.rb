@@ -1,0 +1,2 @@
+class ShippingPackage < ApplicationRecord
+end

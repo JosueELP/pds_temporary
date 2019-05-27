@@ -1,0 +1,2 @@
+class LoadShipping < ApplicationRecord
+end
