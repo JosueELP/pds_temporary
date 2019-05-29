@@ -1,6 +1,10 @@
-<h1>Editing Pick Up</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Recolección</h1>
 
-<%= render 'form', pick_up: @pick_up %>
+  <%= render 'form', pick_up: @pick_up %>
 
-<%= link_to 'Show', @pick_up %> |
-<%= link_to 'Back', pick_ups_path %>
+  <%= link_to 'Ver', @pick_up, class:"tableButton" %> |
+  <%= link_to 'Atrás', pick_ups_path, class:"tableButton" %>
+
+</div>

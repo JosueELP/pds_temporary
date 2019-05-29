@@ -1,6 +1,10 @@
-<h1>Editing Load</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Carga</h1>
 
-<%= render 'form', load: @load %>
+  <%= render 'form', load: @load %>
 
-<%= link_to 'Show', @load %> |
-<%= link_to 'Back', loads_path %>
+  <%= link_to 'Ver', @load, class:"tableButton" %> |
+  <%= link_to 'Atrás', loads_path, class:"tableButton"  %>
+
+</div>

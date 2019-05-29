@@ -1,5 +1,5 @@
 <div class="nav nav-fill navegador">
-    <img src="https://urbancomunicacion.com/wp-content/uploads/2017/10/historia-logo-BMW-urban-comunicacion-1030x1030.png" alt="LOGO" width="60px" height="60" style="margin-top:15px;">
+    <%=image_tag("pdsLogo.png", size: "60x60", class:"userIcon")%>
     <li class="nav-item">
         <div class="text-left info">
             <p id="information" style="color: white; margin-left:10px;">Instituto Tecnológico de Ciudad Guzmán <br> ID: 128756 <br>Av. Tecnológico #100 </p>
@@ -8,6 +8,9 @@
     <li class="nav-item margin-top text-right">
         <div class="inline-block" style="color: white;">
            <%= link_to "Inicio", root_path, class:"nav-link"%>
+        </div>
+        <div class="inline-block" style="color: white;">
+           <%= link_to "Administración", admin_path, class:"nav-link"%>
         </div>
         <div class="dropdown inline-block">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hola <%= current_worker.name %> !</a>
@@ -24,5 +27,6 @@
         </div>
         <!-- -->
     </li>
-    <img src="https://pngimage.net/wp-content/uploads/2018/06/logo-user-png-6.png" alt="" width="60" height="60" style="margin-top:15px;">
+    <%=image_tag("pdsLogo.png", size: "60x60", class:"userIcon")%>
+
 </div>

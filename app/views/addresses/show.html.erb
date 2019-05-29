@@ -1,29 +1,38 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Consulta de Dirección</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @address.street %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Calle:</strong>
+    <%= @address.street %>
+  </p>
 
-<p>
-  <strong>Number:</strong>
-  <%= @address.number %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Número:</strong>
+    <%= @address.number %>
+  </p>
 
-<p>
-  <strong>Colony:</strong>
-  <%= @address.colony %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Colonia:</strong>
+    <%= @address.colony %>
+  </p>
 
-<p>
-  <strong>Interior number:</strong>
-  <%= @address.interior_number %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Número Interior:</strong>
+    <%= @address.interior_number %>
+  </p>
 
-<p>
-  <strong>Postal code:</strong>
-  <%= @address.postal_code %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Código Postal:</strong>
+    <%= @address.postal_code %>
+  </p>
 
-<%= link_to 'Edit', edit_address_path(@address) %> |
-<%= link_to 'Back', addresses_path %>
+  <%= link_to 'Editar', edit_address_path(@address), class:"tableButton" %> |
+  <%= link_to 'Atrás', addresses_path, class:"tableButton" %>
+
+</div>

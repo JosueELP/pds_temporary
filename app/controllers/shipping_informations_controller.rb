@@ -28,7 +28,7 @@ class ShippingInformationsController < ApplicationController
 
     respond_to do |format|
       if @shipping_information.save
-        format.html { redirect_to @shipping_information, notice: 'Shipping information was successfully created.' }
+        format.html { redirect_to @shipping_information, notice: 'La información de envío se guardó correctamente.' }
         format.json { render :show, status: :created, location: @shipping_information }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ShippingInformationsController < ApplicationController
   def update
     respond_to do |format|
       if @shipping_information.update(shipping_information_params)
-        format.html { redirect_to @shipping_information, notice: 'Shipping information was successfully updated.' }
+        format.html { redirect_to @shipping_information, notice: 'La información de envío se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @shipping_information }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ShippingInformationsController < ApplicationController
   def destroy
     @shipping_information.destroy
     respond_to do |format|
-      format.html { redirect_to shipping_informations_url, notice: 'Shipping information was successfully destroyed.' }
+      format.html { redirect_to shipping_informations_url, notice: 'La información de envío se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end

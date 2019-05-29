@@ -1,6 +1,10 @@
-<h1>Editing Address</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Dirección</h1>
 
-<%= render 'form', address: @address %>
+  <%= render 'form', address: @address %>
 
-<%= link_to 'Show', @address %> |
-<%= link_to 'Back', addresses_path %>
+  <%= link_to 'Ver', @address, class:"tableButton" %> |
+  <%= link_to 'Atrás', addresses_path, class:"tableButton" %>
+
+</div>

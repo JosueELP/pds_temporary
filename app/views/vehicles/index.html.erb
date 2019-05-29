@@ -30,7 +30,7 @@
               <td><%= vehicle.license_plate %>&nbsp&nbsp&nbsp</td>
               <td><%= link_to 'Ver', vehicle, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp</td>
               <td><%= link_to 'Editar', edit_vehicle_path(vehicle), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp</td>
-              <td><%= link_to 'Eliminar', vehicle, class:"tableButton", method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+              <td><%= button_to 'Eliminar', vehicle, class:"tableButton", method: :delete, data: { confirm: 'Estas seguro?' } %></td>
             </tr>
           <% end %>
         </tbody>

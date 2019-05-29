@@ -1,27 +1,39 @@
+<%= render "partials/nav"%>
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Cargas</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr class="tableTitle">
+            <th>Fecha de Carga&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<h1>Loads</h1>
+        <tbody>
+          <% @loads.each do |load| %>
+            <tr class="tableInfo">
+              <td><%= load.load_date %></td>
+              <td><%= link_to 'Ver', load, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Editar', edit_load_path(load), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= button_to 'Eliminar', load, class:"tableButton", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Load date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @loads.each do |load| %>
-      <tr>
-        <td><%= load.load_date %></td>
-        <td><%= link_to 'Show', load %></td>
-        <td><%= link_to 'Edit', edit_load_path(load) %></td>
-        <td><%= link_to 'Destroy', load, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Load', new_load_path %>
+      <%= link_to 'Nueva Carga', new_load_path, class:"tableButtonNew" %>
+    </div>
+  </div>
+</div>

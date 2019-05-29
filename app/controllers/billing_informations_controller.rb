@@ -28,7 +28,7 @@ class BillingInformationsController < ApplicationController
 
     respond_to do |format|
       if @billing_information.save
-        format.html { redirect_to @billing_information, notice: 'Billing information was successfully created.' }
+        format.html { redirect_to @billing_information, notice: 'La información fiscal se guardó correctamente.' }
         format.json { render :show, status: :created, location: @billing_information }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BillingInformationsController < ApplicationController
   def update
     respond_to do |format|
       if @billing_information.update(billing_information_params)
-        format.html { redirect_to @billing_information, notice: 'Billing information was successfully updated.' }
+        format.html { redirect_to @billing_information, notice: 'La información fiscal se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @billing_information }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BillingInformationsController < ApplicationController
   def destroy
     @billing_information.destroy
     respond_to do |format|
-      format.html { redirect_to billing_informations_url, notice: 'Billing information was successfully destroyed.' }
+      format.html { redirect_to billing_informations_url, notice: 'La información fiscal se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end

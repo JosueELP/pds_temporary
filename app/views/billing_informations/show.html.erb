@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Consulta de información fiscal</h1>
+    </div>
+  </div>
 
-<p>
-  <strong>Rfc:</strong>
-  <%= @billing_information.rfc %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @billing_information.email %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">RFC:</strong>
+    <%= @billing_information.rfc %>
+  </p>
 
-<%= link_to 'Edit', edit_billing_information_path(@billing_information) %> |
-<%= link_to 'Back', billing_informations_path %>
+  <p class="tableInfo">
+    <strong class="tableTitle">Email:</strong>
+    <%= @billing_information.email %>
+  </p>
+
+  <%= link_to 'Editar', edit_billing_information_path(@billing_information), class:"tableButton" %> |
+  <%= link_to 'Atrás', billing_informations_path, class:"tableButton" %>
+
+</div>

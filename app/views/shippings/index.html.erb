@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col text-center">
-      <h1>Shippings</h1>
+      <h1>Envíos</h1>
     </div>
   </div>
   <table>
@@ -40,7 +40,7 @@
           <td><%= shipping.final_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
           <td><%= link_to 'Ver', shipping, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
           <td><%= link_to 'Editar', edit_shipping_path(shipping), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= link_to 'Eliminar', shipping, method: :delete, data: { confirm: 'Are you sure?' },class:"tableButton" %></td>
+          <td><%= button_to 'Eliminar', shipping, method: :delete, data: { confirm: 'Are you sure?' },class:"tableButton" %></td>
         </tr>
       <% end %>
     </tbody>

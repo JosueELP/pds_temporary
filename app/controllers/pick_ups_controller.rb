@@ -28,7 +28,7 @@ class PickUpsController < ApplicationController
 
     respond_to do |format|
       if @pick_up.save
-        format.html { redirect_to @pick_up, notice: 'Pick up was successfully created.' }
+        format.html { redirect_to @pick_up, notice: 'La recolección se guardó correctamente.' }
         format.json { render :show, status: :created, location: @pick_up }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PickUpsController < ApplicationController
   def update
     respond_to do |format|
       if @pick_up.update(pick_up_params)
-        format.html { redirect_to @pick_up, notice: 'Pick up was successfully updated.' }
+        format.html { redirect_to @pick_up, notice: 'La recolección se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @pick_up }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PickUpsController < ApplicationController
   def destroy
     @pick_up.destroy
     respond_to do |format|
-      format.html { redirect_to pick_ups_url, notice: 'Pick up was successfully destroyed.' }
+      format.html { redirect_to pick_ups_url, notice: 'La recolección se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end

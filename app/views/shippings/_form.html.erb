@@ -13,12 +13,17 @@
 
   <div class="field">
     <%= form.label :Fecha_de_Expedicion %>
-    <%= form.date_select :expedition_date, {:class => "selectors"}  %>
+    <div class="selectors">
+      <%= form.date_select( :expedition_date, {:class => "selectors"})  %>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :delivery_date %>
-    <%= form.date_select :delivery_date, class:"selector" %>
+    <div class="selectors">
+      <%= form.date_select :delivery_date, class:"selector" %>
+    </div>
+  </div>
 
   <div class="field">
     <%= form.label :tipo %>
@@ -67,6 +72,6 @@
 
   <div class="actions">
     <br>
-    <%= form.submit"Registrar",class:"btn bigBtn"%>
+    <%= form.submit"Guardar",class:"btn bigBtn"%>
   </div>
 <% end %>

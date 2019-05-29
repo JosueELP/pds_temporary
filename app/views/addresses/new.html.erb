@@ -1,5 +1,16 @@
-<h1>New Address</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Nueva Dirección</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= render 'form', address: @address %>
+      <br>
+      <%= link_to 'Atrás', addresses_path, class:"tableButton" %>
 
-<%= render 'form', address: @address %>
-
-<%= link_to 'Back', addresses_path %>
+    </div>
+  </div>
+</div>

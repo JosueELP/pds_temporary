@@ -1,4 +1,5 @@
 class ShippingsController < ApplicationController
+  before_action :authenticate_worker!
   before_action :set_shipping, only: [:show, :edit, :update, :destroy]
 
   # GET /shippings
@@ -56,7 +57,7 @@ class ShippingsController < ApplicationController
   def destroy
     @shipping.destroy
     respond_to do |format|
-      format.html { redirect_to shippings_url, notice: 'Shipping was successfully destroyed.' }
+      format.html { redirect_to shippings_url, notice: 'El registro se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end

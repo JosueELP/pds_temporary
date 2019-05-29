@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Consulta de Información de Envío</h1>
+    </div>
+  </div>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @shipping_information.phone %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Aditional info:</strong>
-  <%= @shipping_information.aditional_info %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Teléfono:</strong>
+    <%= @shipping_information.phone %>
+  </p>
 
-<%= link_to 'Edit', edit_shipping_information_path(@shipping_information) %> |
-<%= link_to 'Back', shipping_informations_path %>
+  <p class="tableInfo">
+    <strong class="tableTitle">Información adicional:</strong>
+    <%= @shipping_information.aditional_info %>
+  </p>
+
+  <%= link_to 'Editar', edit_shipping_information_path(@shipping_information), class:"tableButton" %> |
+  <%= link_to 'Atrás', shipping_informations_path, class:"tableButton" %>
+
+</div>

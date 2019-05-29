@@ -1,31 +1,43 @@
+<%= render "partials/nav"%>
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Sucursales</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr class="tableTitle">
+            <th>Nombre Sucursal&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th>Teléfono&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th>Email&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<h1>Branch Offices</h1>
+        <tbody>
+          <% @branch_offices.each do |branch_office| %>
+            <tr class="tableInfo">
+              <td><%= branch_office.branch_office_name %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= branch_office.branch_office_phone %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= branch_office.branch_office_email %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Ver', branch_office, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Editar', edit_branch_office_path(branch_office), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= button_to 'Eliminar', branch_office, class:"tableButton", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Branch office name</th>
-      <th>Branch office phone</th>
-      <th>Branch office email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @branch_offices.each do |branch_office| %>
-      <tr>
-        <td><%= branch_office.branch_office_name %></td>
-        <td><%= branch_office.branch_office_phone %></td>
-        <td><%= branch_office.branch_office_email %></td>
-        <td><%= link_to 'Show', branch_office %></td>
-        <td><%= link_to 'Edit', edit_branch_office_path(branch_office) %></td>
-        <td><%= link_to 'Destroy', branch_office, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Branch Office', new_branch_office_path %>
+      <%= link_to 'Nueva Sucursal', new_branch_office_path, class:"tableButtonNew"%>
+    </div>
+  </div>
+</div>

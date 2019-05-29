@@ -1,6 +1,10 @@
-<h1>Editing Branch Office</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Sucursal</h1>
 
-<%= render 'form', branch_office: @branch_office %>
+  <%= render 'form', branch_office: @branch_office %>
 
-<%= link_to 'Show', @branch_office %> |
-<%= link_to 'Back', branch_offices_path %>
+  <%= link_to 'Ver', @branch_office, class:"tableButton" %> |
+  <%= link_to 'Atrás', branch_offices_path, class:"tableButton" %>
+
+</div>

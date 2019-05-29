@@ -1,0 +1,81 @@
+<%= render "partials/nav"%>
+<body>
+  <div class="container-fluid">
+    <h1 class="text-center">Administración</h1>
+    <div class="row text-center py-3">
+      <div class="col">
+        <button type="button" name="button1" class="btn bigBtn" onclick="window.location.href='shippings'">
+          <%=image_tag("shippings.png",class:"bntIcon")%><br>
+          Envíos
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button6" class="btn bigBtn" onclick="window.location.href='pick_ups'">
+          <%=image_tag("pickups.png",class:"bntIcon")%>
+          <br>Recolecciones
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button3" class="btn bigBtn" onclick="window.location.href='clients'">
+          <%=image_tag("clients.png",class:"bntIcon")%>
+          <br>Clientes
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button10" class="btn bigBtn" onclick="window.location.href='billing_informations'">
+          <%=image_tag("billings.png",class:"bntIcon")%>
+          <br>Facturación
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button5" class="btn bigBtn" onclick="window.location.href='loads'">
+          <%=image_tag("loads.png",class:"bntIcon")%>
+          <br>Cargas
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button2" class="btn bigBtn" onclick="window.location.href='vehicles'" >
+          <%=image_tag("vehicles.png",class:"bntIcon")%>
+          <br>Vehículos
+        </button>
+      </div>
+    </div>
+
+    <div class="row text-center py-3">
+      <div class="col">
+        <button type="button" name="button8" class="btn bigBtn" onclick="window.location.href='shipping_informations'">
+          <%=image_tag("shippinginfos.png",class:"bntIcon")%>
+          <br>Información de envíos
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button9" class="btn bigBtn" onclick="window.location.href='addresses'">
+          <%=image_tag("addresses.png",class:"bntIcon")%>
+          <br>Direcciones
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button7" class="btn bigBtn" onclick="window.location.href='roles'">
+          <%=image_tag("role.png",class:"bntIcon")%>
+          <br>Roles
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button11" class="btn bigBtn" onclick="window.location.href='workers'">
+          <%=image_tag("workers.png",class:"bntIcon")%>
+          <br>Trabajadores
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" name="button4" class="btn bigBtn" onclick="window.location.href='branch_offices'">
+          <%=image_tag("branchoffices.png",class:"bntIcon")%>
+          <br>Oficinas
+        </button>
+      </div>
+    </div>
+
+    <div class="row text-center">
+
+    </div>
+  </div>
+</body>

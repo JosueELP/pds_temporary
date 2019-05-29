@@ -28,7 +28,7 @@ class LoadsController < ApplicationController
 
     respond_to do |format|
       if @load.save
-        format.html { redirect_to @load, notice: 'Load was successfully created.' }
+        format.html { redirect_to @load, notice: 'La carga se guardó correctamente.' }
         format.json { render :show, status: :created, location: @load }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class LoadsController < ApplicationController
   def update
     respond_to do |format|
       if @load.update(load_params)
-        format.html { redirect_to @load, notice: 'Load was successfully updated.' }
+        format.html { redirect_to @load, notice: 'La carga se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @load }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class LoadsController < ApplicationController
   def destroy
     @load.destroy
     respond_to do |format|
-      format.html { redirect_to loads_url, notice: 'Load was successfully destroyed.' }
+      format.html { redirect_to loads_url, notice: 'La carga se eliminó correctamente.' }
       format.json { head :no_content }
     end
   end

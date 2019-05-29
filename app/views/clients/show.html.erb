@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Consulta de Cliente</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Client name:</strong>
-  <%= @client.client_name %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Nombre:</strong>
+    <%= @client.client_name %>
+  </p>
 
-<p>
-  <strong>Client lastname:</strong>
-  <%= @client.client_lastname %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Apellido:</strong>
+    <%= @client.client_lastname %>
+  </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+  <%= link_to 'Editar', edit_client_path(@client), class:"tableButton" %> |
+  <%= link_to 'Atrás', clients_path, class:"tableButton" %>
+
+</div>

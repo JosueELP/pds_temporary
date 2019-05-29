@@ -1,6 +1,10 @@
-<h1>Editing Billing Information</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Información Fiscal</h1>
 
-<%= render 'form', billing_information: @billing_information %>
+  <%= render 'form', billing_information: @billing_information %>
 
-<%= link_to 'Show', @billing_information %> |
-<%= link_to 'Back', billing_informations_path %>
+  <%= link_to 'Ver', @billing_information, class:"tableButton" %> |
+  <%= link_to 'Atrás', billing_informations_path, class:"tableButton" %>
+
+</div>

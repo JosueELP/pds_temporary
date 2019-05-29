@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Consulta de Rol</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Role name:</strong>
-  <%= @role.role_name %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Rol:</strong>
+    <%= @role.role_name %>
+  </p>
 
-<%= link_to 'Edit', edit_role_path(@role) %> |
-<%= link_to 'Back', roles_path %>
+  <%= link_to 'Editar', edit_role_path(@role), class:"tableButton" %> |
+  <%= link_to 'Atrás', roles_path, class:"tableButton" %>
+
+</div>

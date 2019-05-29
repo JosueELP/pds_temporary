@@ -12,16 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :is_done %>
+    <%= form.label :Terminado %>
     <%= form.text_field :is_done %>
   </div>
-
   <div class="field">
-    <%= form.label :schedule %>
-    <%= form.date_select :schedule %>
+    <%= form.label :Agenda %>
+    <div class="selectors">
+      <%= form.date_select( :schedule, { :class => "selectors"}) %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <br>
+    <%= form.submit"Guardar",class:"btn bigBtn" %>
   </div>
 <% end %>

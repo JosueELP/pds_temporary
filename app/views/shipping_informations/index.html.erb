@@ -1,29 +1,40 @@
+<%= render "partials/nav"%>
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Información de Envío</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr class="tableTitle">
+            <th>Teléfono&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th>Información Adicional&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<h1>Shipping Informations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Phone</th>
-      <th>Aditional info</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shipping_informations.each do |shipping_information| %>
-      <tr>
-        <td><%= shipping_information.phone %></td>
-        <td><%= shipping_information.aditional_info %></td>
-        <td><%= link_to 'Show', shipping_information %></td>
-        <td><%= link_to 'Edit', edit_shipping_information_path(shipping_information) %></td>
-        <td><%= link_to 'Destroy', shipping_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Shipping Information', new_shipping_information_path %>
+        <tbody>
+          <% @shipping_informations.each do |shipping_information| %>
+            <tr class="tableInfo">
+              <td><%= shipping_information.phone %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping_information.aditional_info %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Ver', shipping_information, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Editar', edit_shipping_information_path(shipping_information), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= button_to 'Eliminar', shipping_information, class:"tableButton", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <br>
+      <%= link_to 'Nueva Información de Envío', new_shipping_information_path, class:"tableButtonNew"  %>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,15 @@
-<h1>New Load</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Nueva Carga</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= render 'form', load: @load %>
 
-<%= render 'form', load: @load %>
-
-<%= link_to 'Back', loads_path %>
+      <%= link_to 'Atrás', loads_path, class:"tableButton" %>
+    </div>
+  </div>
+</div>

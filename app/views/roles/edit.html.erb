@@ -1,6 +1,10 @@
-<h1>Editing Role</h1>
+<%= render "partials/nav"%><h1>Editing Role</h1>
+<div class="container">
+  <h1>Editar Rol</h1>
 
-<%= render 'form', role: @role %>
+  <%= render 'form', role: @role %>
 
-<%= link_to 'Show', @role %> |
-<%= link_to 'Back', roles_path %>
+  <%= link_to 'Ver', @role, class:"tableButton" %> |
+  <%= link_to 'Atrás', roles_path, class:"tableButton" %>
+
+</div>

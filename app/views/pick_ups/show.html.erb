@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Consulta de Recolección</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Is done:</strong>
-  <%= @pick_up.is_done %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Terminado:</strong>
+    <%= @pick_up.is_done %>
+  </p>
 
-<p>
-  <strong>Schedule:</strong>
-  <%= @pick_up.schedule %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Agenda:</strong>
+    <%= @pick_up.schedule %>
+  </p>
 
-<%= link_to 'Edit', edit_pick_up_path(@pick_up) %> |
-<%= link_to 'Back', pick_ups_path %>
+  <%= link_to 'Editar', edit_pick_up_path(@pick_up), class:"tableButton" %> |
+  <%= link_to 'Atrás', pick_ups_path, class:"tableButton" %>
+
+</div>

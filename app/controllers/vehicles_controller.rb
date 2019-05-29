@@ -1,4 +1,5 @@
 class VehiclesController < ApplicationController
+  before_action :authenticate_worker!
   before_action :set_vehicle, only: [:show, :edit, :update, :destroy]
 
   # GET /vehicles
@@ -56,7 +57,7 @@ class VehiclesController < ApplicationController
   def destroy
     @vehicle.destroy
     respond_to do |format|
-      format.html { redirect_to vehicles_url, notice: 'Vehicle was successfully destroyed.' }
+      format.html { redirect_to vehicles_url, notice: 'El registro se eliminó correctamente' }
       format.json { head :no_content }
     end
   end
