@@ -1,6 +1,10 @@
-<h1>Editing Shipping</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar envío</h1>
 
-<%= render 'form', shipping: @shipping %>
+  <%= render 'form', shipping: @shipping %>
 
-<%= link_to 'Show', @shipping %> |
-<%= link_to 'Back', shippings_path %>
+  <%= link_to 'Ver', @shipping, class:"tableButton"  %> |
+  <%= link_to 'Atrás', shippings_path, class:"tableButton"  %>
+
+</div>

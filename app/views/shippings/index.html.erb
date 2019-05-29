@@ -1,47 +1,53 @@
+<%= render "partials/nav"%>
 <p id="notice"><%= notice %></p>
-
-<h1>Shippings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Expedition date</th>
-      <th>Delivery date</th>
-      <th>Type</th>
-      <th>Authorization sign</th>
-      <th>Delivery sign</th>
-      <th>Package number</th>
-      <th>Delivery cost</th>
-      <th>Insurance cost</th>
-      <th>Pick up cost</th>
-      <th>Taxes</th>
-      <th>Final cost</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shippings.each do |shipping| %>
-      <tr>
-        <td><%= shipping.expedition_date %></td>
-        <td><%= shipping.delivery_date %></td>
-        <td><%= shipping.type %></td>
-        <td><%= shipping.authorization_sign %></td>
-        <td><%= shipping.delivery_sign %></td>
-        <td><%= shipping.package_number %></td>
-        <td><%= shipping.delivery_cost %></td>
-        <td><%= shipping.insurance_cost %></td>
-        <td><%= shipping.pick_up_cost %></td>
-        <td><%= shipping.taxes %></td>
-        <td><%= shipping.final_cost %></td>
-        <td><%= link_to 'Show', shipping %></td>
-        <td><%= link_to 'Edit', edit_shipping_path(shipping) %></td>
-        <td><%= link_to 'Destroy', shipping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Shippings</h1>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr class="tableTitle">
+        <th>Fecha de Expedición</th>
+        <th>Fecha de Entrega</th>
+        <th>Tipo</th>
+        <th>Firma de autorización</th>
+        <th>Firma de entrega</th>
+        <th>No. paquetes</th>
+        <th>Costo de envío</th>
+        <th>Costo seguro</th>
+        <th>Costo recolección</th>
+        <th>IVA</th>
+        <th>Costo final</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @shippings.each do |shipping| %>
+        <tr class="tableInfo">
+          <td><%= shipping.expedition_date %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.delivery_date %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.ship_type %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.authorization_sign %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.delivery_sign %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.package_number %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.delivery_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.insurance_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.pick_up_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.taxes %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= shipping.final_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= link_to 'Ver', shipping, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= link_to 'Editar', edit_shipping_path(shipping), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+          <td><%= link_to 'Eliminar', shipping, method: :delete, data: { confirm: 'Are you sure?' },class:"tableButton" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Shipping', new_shipping_path %>
+  <br>
+
+  <%= link_to 'Nuevo envío', new_shipping_path, class:"tableButtonNew" %>
+
+</div>

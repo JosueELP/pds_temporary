@@ -1,5 +1,16 @@
-<h1>New Shipping</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>New Shipping</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= render 'form', shipping: @shipping %>
 
-<%= render 'form', shipping: @shipping %>
+      <%= link_to 'Back', shippings_path %>
+    </div>
+  </div>
 
-<%= link_to 'Back', shippings_path %>
+</div>

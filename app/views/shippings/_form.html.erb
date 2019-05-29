@@ -12,22 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :expedition_date %>
-    <%= form.date_select :expedition_date %>
+    <%= form.label :Fecha_de_Expedicion %>
+    <%= form.date_select :expedition_date, {:class => "selectors"}  %>
   </div>
 
   <div class="field">
     <%= form.label :delivery_date %>
-    <%= form.date_select :delivery_date %>
+    <%= form.date_select :delivery_date, class:"selector" %>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.text_field :ship_type %>
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :authorization_sign %>
+    <%= form.label :Firma_de_autorización %>
     <%= form.text_field :authorization_sign %>
   </div>
 
@@ -67,6 +66,7 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <br>
+    <%= form.submit"Registrar",class:"btn bigBtn"%>
   </div>
 <% end %>

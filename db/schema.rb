@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_231431) do
   create_table "shippings", force: :cascade do |t|
     t.date "expedition_date"
     t.date "delivery_date"
-    t.string "type"
+    t.string "ship_type"
     t.string "authorization_sign"
     t.string "delivery_sign"
     t.integer "package_number"

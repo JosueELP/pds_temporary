@@ -28,7 +28,7 @@ class ShippingsController < ApplicationController
 
     respond_to do |format|
       if @shipping.save
-        format.html { redirect_to @shipping, notice: 'Shipping was successfully created.' }
+        format.html { redirect_to @shipping, notice: 'El envío se guardó correctamente' }
         format.json { render :show, status: :created, location: @shipping }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ShippingsController < ApplicationController
   def update
     respond_to do |format|
       if @shipping.update(shipping_params)
-        format.html { redirect_to @shipping, notice: 'Shipping was successfully updated.' }
+        format.html { redirect_to @shipping, notice: 'El envío se actualizó correctamente.' }
         format.json { render :show, status: :ok, location: @shipping }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class ShippingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipping_params
-      params.require(:shipping).permit(:expedition_date, :delivery_date, :type, :authorization_sign, :delivery_sign, :package_number, :delivery_cost, :insurance_cost, :pick_up_cost, :taxes, :final_cost)
+      params.require(:shipping).permit(:expedition_date, :delivery_date, :ship_type, :authorization_sign, :delivery_sign, :package_number, :delivery_cost, :insurance_cost, :pick_up_cost, :taxes, :final_cost)
     end
 end

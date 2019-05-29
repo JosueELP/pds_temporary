@@ -1,59 +1,71 @@
+<%= render "partials/nav"%>
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Consulta de Envío</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p class="tableInfo">
+        <strong class="tableTitle">Fecha de Expedicion:</strong>
+        <%= @shipping.expedition_date %>
+      </p>
 
-<p>
-  <strong>Expedition date:</strong>
-  <%= @shipping.expedition_date %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Fecha de entrega:</strong>
+        <%= @shipping.delivery_date %>
+      </p>
 
-<p>
-  <strong>Delivery date:</strong>
-  <%= @shipping.delivery_date %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Tipo:</strong>
+        <%= @shipping.ship_type %>
+      </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @shipping.type %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Firma de autorización:</strong>
+        <%= @shipping.authorization_sign %>
+      </p>
 
-<p>
-  <strong>Authorization sign:</strong>
-  <%= @shipping.authorization_sign %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Firma de entrega:</strong>
+        <%= @shipping.delivery_sign %>
+      </p>
 
-<p>
-  <strong>Delivery sign:</strong>
-  <%= @shipping.delivery_sign %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Numero de paquetes:</strong>
+        <%= @shipping.package_number %>
+      </p>
 
-<p>
-  <strong>Package number:</strong>
-  <%= @shipping.package_number %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Costo de envío:</strong>
+        <%= @shipping.delivery_cost %>
+      </p>
 
-<p>
-  <strong>Delivery cost:</strong>
-  <%= @shipping.delivery_cost %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Costo de seguro:</strong>
+        <%= @shipping.insurance_cost %>
+      </p>
 
-<p>
-  <strong>Insurance cost:</strong>
-  <%= @shipping.insurance_cost %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Costo de recolección:</strong>
+        <%= @shipping.pick_up_cost %>
+      </p>
 
-<p>
-  <strong>Pick up cost:</strong>
-  <%= @shipping.pick_up_cost %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">IVA:</strong>
+        <%= @shipping.taxes %>
+      </p>
 
-<p>
-  <strong>Taxes:</strong>
-  <%= @shipping.taxes %>
-</p>
+      <p class="tableInfo">
+        <strong class="tableTitle">Precio final:</strong>
+        <%= @shipping.final_cost %>
+      </p>
 
-<p>
-  <strong>Final cost:</strong>
-  <%= @shipping.final_cost %>
-</p>
+      <%= link_to 'Editar', edit_shipping_path(@shipping), class:"tableButton" %> |
+      <%= link_to 'Atrás', shippings_path, class:"tableButton" %>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_shipping_path(@shipping) %> |
-<%= link_to 'Back', shippings_path %>
+</div>

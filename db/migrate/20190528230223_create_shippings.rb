@@ -3,7 +3,7 @@ class CreateShippings < ActiveRecord::Migration[5.2]
     create_table :shippings do |t|
       t.date :expedition_date
       t.date :delivery_date
-      t.string :type
+      t.string :ship_type
       t.string :authorization_sign
       t.string :delivery_sign
       t.integer :package_number
