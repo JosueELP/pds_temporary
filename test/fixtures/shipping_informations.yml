@@ -2,8 +2,8 @@
 
 one:
   phone: 1
-  additional_info: MyString
+  aditional_info: MyString
 
 two:
   phone: 1
-  additional_info: MyString
+  aditional_info: MyString

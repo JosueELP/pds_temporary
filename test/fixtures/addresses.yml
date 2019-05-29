@@ -2,14 +2,14 @@
 
 one:
   street: MyString
-  number: 1
+  number: MyString
   colony: MyString
-  interior_number: 1
+  interior_number: MyString
   postal_code: 1
 
 two:
   street: MyString
-  number: 1
+  number: MyString
   colony: MyString
-  interior_number: 1
+  interior_number: MyString
   postal_code: 1

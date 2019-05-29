@@ -1,0 +1,27 @@
+<%= form_with(model: shipping_information, local: true) do |form| %>
+  <% if shipping_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shipping_information.errors.count, "error") %> prohibited this shipping_information from being saved:</h2>
+
+      <ul>
+      <% shipping_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.number_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aditional_info %>
+    <%= form.text_field :aditional_info %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

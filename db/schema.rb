@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_225554) do
+ActiveRecord::Schema.define(version: 2019_05_28_231431) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
-    t.integer "number"
+    t.string "number"
     t.string "colony"
-    t.integer "interior_number"
+    t.string "interior_number"
     t.integer "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,11 +50,6 @@ ActiveRecord::Schema.define(version: 2019_05_27_225554) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "load_pick_ups", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "load_shippings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_225554) do
   end
 
   create_table "packages", force: :cascade do |t|
+    t.integer "quantity"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_225554) do
   end
 
   create_table "pick_ups", force: :cascade do |t|
+    t.string "is_done"
     t.date "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,12 +89,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_225554) do
 
   create_table "shipping_informations", force: :cascade do |t|
     t.integer "phone"
-    t.string "additional_info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shipping_packages", force: :cascade do |t|
+    t.string "aditional_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -111,6 +103,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_225554) do
     t.integer "package_number"
     t.float "delivery_cost"
     t.float "insurance_cost"
+    t.float "pick_up_cost"
     t.float "taxes"
     t.float "final_cost"
     t.datetime "created_at", null: false
@@ -135,7 +128,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_225554) do
     t.integer "year"
     t.string "model"
     t.string "color"
-    t.string "licence_plate"
+    t.string "license_plate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

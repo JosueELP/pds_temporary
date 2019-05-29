@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shipping_information.phone %>
+</p>
+
+<p>
+  <strong>Aditional info:</strong>
+  <%= @shipping_information.aditional_info %>
+</p>
+
+<%= link_to 'Edit', edit_shipping_information_path(@shipping_information) %> |
+<%= link_to 'Back', shipping_informations_path %>

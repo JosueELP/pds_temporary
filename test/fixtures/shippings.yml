@@ -1,25 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  expedition_date: 2019-05-26
-  delivery_date: 2019-05-26
+  expedition_date: 2019-05-28
+  delivery_date: 2019-05-28
   type: 
   authorization_sign: MyString
   delivery_sign: MyString
   package_number: 1
   delivery_cost: 1.5
   insurance_cost: 1.5
+  pick_up_cost: 1.5
   taxes: 1.5
   final_cost: 1.5
 
 two:
-  expedition_date: 2019-05-26
-  delivery_date: 2019-05-26
+  expedition_date: 2019-05-28
+  delivery_date: 2019-05-28
   type: 
   authorization_sign: MyString
   delivery_sign: MyString
   package_number: 1
   delivery_cost: 1.5
   insurance_cost: 1.5
+  pick_up_cost: 1.5
   taxes: 1.5
   final_cost: 1.5

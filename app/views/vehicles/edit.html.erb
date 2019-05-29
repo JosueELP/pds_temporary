@@ -1,0 +1,10 @@
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Vehiculo</h1>
+
+  <%= render 'form', vehicle: @vehicle %>
+
+  <%= link_to 'Ver', @vehicle, class:"tableButton" %> |
+  <%= link_to 'Atrás', vehicles_path, class:"tableButton" %>
+
+</div>

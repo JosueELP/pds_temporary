@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is done:</strong>
+  <%= @pick_up.is_done %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @pick_up.schedule %>
+</p>
+
+<%= link_to 'Edit', edit_pick_up_path(@pick_up) %> |
+<%= link_to 'Back', pick_ups_path %>

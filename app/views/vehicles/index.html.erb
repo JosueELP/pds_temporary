@@ -1,3 +1,46 @@
-<body>
-  <%= render "partials/nav" %>
-</body>
+<%= render "partials/nav"%>
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+        <h1>Vehicles</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr>
+            <th class="tableTitle">Marca</th>
+            <th class="tableTitle">Año</th>
+            <th class="tableTitle">Modelo</th>
+            <th class="tableTitle">Color</th>
+            <th class="tableTitle">Placa</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @vehicles.each do |vehicle| %>
+            <tr class="tableInfo">
+              <td><%= vehicle.brand %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= vehicle.year %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= vehicle.model %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= vehicle.color %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= vehicle.license_plate %>&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Ver', vehicle, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Editar', edit_vehicle_path(vehicle), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Eliminar', vehicle, class:"tableButton", method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <%= link_to 'New Vehicle', new_vehicle_path, class:"tableButtonNew" %>
+    </div>
+  </div>
+
+</div>

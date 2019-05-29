@@ -81,3 +81,28 @@ h2{
 .fieldTitle{
   color: #D1D1D1;
 }
+
+
+/*CSS for CRUDs*/
+
+.tableTitle{
+  color:white;
+}
+.tableInfo{
+  color:#D1D1D1;
+}
+
+.tableButton{
+  color: #018FA2;
+}
+.tableButton:hover{
+    color: white;
+}
+
+.tableButtonNew{
+  color: #018FA2;
+  font-size: 20px;
+}
+.tableButtonNew:hover{
+  color: white;
+}

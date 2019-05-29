@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expedition date:</strong>
+  <%= @shipping.expedition_date %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @shipping.delivery_date %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @shipping.type %>
+</p>
+
+<p>
+  <strong>Authorization sign:</strong>
+  <%= @shipping.authorization_sign %>
+</p>
+
+<p>
+  <strong>Delivery sign:</strong>
+  <%= @shipping.delivery_sign %>
+</p>
+
+<p>
+  <strong>Package number:</strong>
+  <%= @shipping.package_number %>
+</p>
+
+<p>
+  <strong>Delivery cost:</strong>
+  <%= @shipping.delivery_cost %>
+</p>
+
+<p>
+  <strong>Insurance cost:</strong>
+  <%= @shipping.insurance_cost %>
+</p>
+
+<p>
+  <strong>Pick up cost:</strong>
+  <%= @shipping.pick_up_cost %>
+</p>
+
+<p>
+  <strong>Taxes:</strong>
+  <%= @shipping.taxes %>
+</p>
+
+<p>
+  <strong>Final cost:</strong>
+  <%= @shipping.final_cost %>
+</p>
+
+<%= link_to 'Edit', edit_shipping_path(@shipping) %> |
+<%= link_to 'Back', shippings_path %>

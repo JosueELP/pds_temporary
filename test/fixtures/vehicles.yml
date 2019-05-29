@@ -5,11 +5,11 @@ one:
   year: 1
   model: MyString
   color: MyString
-  licence_plate: MyString
+  license_plate: MyString
 
 two:
   brand: MyString
   year: 1
   model: MyString
   color: MyString
-  licence_plate: MyString
+  license_plate: MyString

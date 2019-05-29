@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
+  resources :loads
+  resources :vehicles
+  resources :addresses
+  resources :branch_offices
+  resources :billing_informations
+  resources :shipping_informations
+  resources :roles
+  resources :pick_ups
+  resources :clients
+  resources :shippings
   devise_for :workers
   devise_scope :worker do
     get '/workers/sign_out' => 'devise/sessions#destroy'
   end
   root 'home#index'
-  get "vehicles", to:"vehicles#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #-----------------------------------------------
   # Example of CRUD resources routes of a model:
