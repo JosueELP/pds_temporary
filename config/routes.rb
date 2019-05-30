@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :states
+  resources :payment_methods
+  resources :packages
+  resources :statuses
+  resources :cities
   resources :loads
   resources :vehicles
   resources :addresses

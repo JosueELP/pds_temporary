@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
-    t.integer "number"
+    t.string "number"
     t.string "colony"
-    t.integer "interior_number"
+    t.string "interior_number"
     t.integer "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,11 +50,6 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "load_pick_ups", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "load_shippings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -67,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
   end
 
   create_table "packages", force: :cascade do |t|
+    t.integer "quantity"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
   end
 
   create_table "pick_ups", force: :cascade do |t|
+    t.string "is_done"
     t.date "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,12 +89,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
 
   create_table "shipping_informations", force: :cascade do |t|
     t.integer "phone"
-    t.string "additional_info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shipping_packages", force: :cascade do |t|
+    t.string "aditional_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -105,12 +97,13 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
   create_table "shippings", force: :cascade do |t|
     t.date "expedition_date"
     t.date "delivery_date"
-    t.string "type"
+    t.string "ship_type"
     t.string "authorization_sign"
     t.string "delivery_sign"
     t.integer "package_number"
     t.float "delivery_cost"
     t.float "insurance_cost"
+    t.float "pick_up_cost"
     t.float "taxes"
     t.float "final_cost"
     t.datetime "created_at", null: false
@@ -135,7 +128,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
     t.integer "year"
     t.string "model"
     t.string "color"
-    t.string "licence_plate"
+    t.string "license_plate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -156,10 +149,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
     t.integer "role_id", default: 1, null: false
     t.integer "address_id", default: 1, null: false
     t.integer "branch_office_id", default: 1, null: false
-    t.integer "city_id", default: 1, null: false
     t.index ["address_id"], name: "index_workers_on_address_id"
     t.index ["branch_office_id"], name: "index_workers_on_branch_office_id"
-    t.index ["city_id"], name: "index_workers_on_city_id"
     t.index ["email"], name: "index_workers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_workers_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_workers_on_role_id"
