@@ -4,4 +4,5 @@ class Worker < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, :last_name, :gender , presence: true
+  belongs_to :role
 end

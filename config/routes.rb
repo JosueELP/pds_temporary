@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :pick_ups
   resources :clients
   resources :shippings
-  resources :workers
   devise_for :workers
   get "admin", to:"admin#index"
   devise_scope :worker do

@@ -49,6 +49,22 @@
       </div>
 
       <div class="field">
+        <p style="color:gray;">ROL</p>
+      </div>
+      <div class="dropdown">
+        <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona un rol</a>
+        <div class="dropdown-menu">
+          <% @roles = Role.all %>
+          <% @roles.each do |roles| %>
+            <div class="col">
+              <%= f.radio_button :role_id, roles.id %>
+              <%= f.label :role_id, roles.role_name, :value => roles.id, :class=>"fieldTitle tableButton"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="field">
         <p style="color:white;">Género:</p>
       </div>
       <div class="text-center">
@@ -66,11 +82,11 @@
             <%= f.label :gender, "Género no Binario", :value => "No binario", :class=>"fieldTitle" %>
           </div>
         </div>
-
       </div>
+
       <div class="row text-center">
         <div class="col">
-          <%= f.submit "Actualizar", class:"btn btn-primary" %>
+          <%= button_to "Actualizar", registration_path(resource_name), method: :put, class:"btn btn-primary" %>
         </div>
         <div class="col">
           <p><%= button_to "Cancela mi cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-secondary" %></p>
