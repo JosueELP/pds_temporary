@@ -1,5 +1,15 @@
-<h1>New State</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Nuevo Estado</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= render 'form', state: @state %>
 
-<%= render 'form', state: @state %>
-
-<%= link_to 'Back', states_path %>
+      <%= link_to 'Atrás', states_path, class:"tableButton" %>
+    </div>
+  </div>
+</div>

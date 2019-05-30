@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Consulta de Método de Pago</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @payment_method.name %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Nombre:</strong>
+    <%= @payment_method.name %>
+  </p>
 
-<%= link_to 'Edit', edit_payment_method_path(@payment_method) %> |
-<%= link_to 'Back', payment_methods_path %>
+  <%= link_to 'Editar', edit_payment_method_path(@payment_method), class:"tableButton" %> |
+  <%= link_to 'Atrás', payment_methods_path, class:"tableButton" %>
+
+</div>

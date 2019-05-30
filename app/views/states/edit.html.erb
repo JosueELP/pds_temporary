@@ -1,6 +1,10 @@
-<h1>Editing State</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Estado</h1>
 
-<%= render 'form', state: @state %>
+  <%= render 'form', state: @state %>
 
-<%= link_to 'Show', @state %> |
-<%= link_to 'Back', states_path %>
+  <%= link_to 'Ver', @state, class:"tableButton" %> |
+  <%= link_to 'Atrás', states_path, class:"tableButton" %>
+
+</div>

@@ -1,5 +1,16 @@
-<h1>New Status</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Nuevo Status</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= render 'form', status: @status %>
 
-<%= render 'form', status: @status %>
+      <%= link_to 'Atrás', statuses_path, class:"tableButton" %>
 
-<%= link_to 'Back', statuses_path %>
+    </div>
+  </div>
+</div>

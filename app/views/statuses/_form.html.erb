@@ -17,11 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :status_date %>
-    <%= form.date_select :status_date %>
+    <%= form.label :fecha_de_status %>
+    <div class="selectors">
+      <%= form.date_select :status_date %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit"Guardar",class:"btn bigBtn" %>
   </div>
 <% end %>

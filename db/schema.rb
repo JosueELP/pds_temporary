@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_002439) do
+ActiveRecord::Schema.define(version: 2019_05_30_213351) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
     t.date "load_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "branch_office_id"
+    t.integer "export_branch_office_id"
+    t.integer "worker_id"
+    t.integer "vehicle_id"
+    t.index ["branch_office_id"], name: "index_loads_on_branch_office_id"
+    t.index ["export_branch_office_id"], name: "index_loads_on_export_branch_office_id"
+    t.index ["vehicle_id"], name: "index_loads_on_vehicle_id"
+    t.index ["worker_id"], name: "index_loads_on_worker_id"
   end
 
   create_table "packages", force: :cascade do |t|
@@ -79,6 +87,12 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
     t.date "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "client_id"
+    t.integer "address_id"
+    t.integer "branch_office_id"
+    t.index ["address_id"], name: "index_pick_ups_on_address_id"
+    t.index ["branch_office_id"], name: "index_pick_ups_on_branch_office_id"
+    t.index ["client_id"], name: "index_pick_ups_on_client_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -92,6 +106,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
     t.string "aditional_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "address_id"
+    t.index ["address_id"], name: "index_shipping_informations_on_address_id"
   end
 
   create_table "shippings", force: :cascade do |t|
@@ -121,6 +137,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_002439) do
     t.date "status_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "branch_office_id"
+    t.index ["branch_office_id"], name: "index_statuses_on_branch_office_id"
   end
 
   create_table "vehicles", force: :cascade do |t|

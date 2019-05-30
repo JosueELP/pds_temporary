@@ -1,6 +1,10 @@
-<h1>Editing City</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Ciudad</h1>
 
-<%= render 'form', city: @city %>
+  <%= render 'form', city: @city %>
 
-<%= link_to 'Show', @city %> |
-<%= link_to 'Back', cities_path %>
+  <%= link_to 'Ver', @city, class:"tableButton" %> |
+  <%= link_to 'Atrás', cities_path, class:"tableButton" %>
+
+</div>

@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Consulta de Ciudad</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>City name:</strong>
-  <%= @city.city_name %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Ciudad:</strong>
+    <%= @city.city_name %>
+  </p>
 
-<%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', cities_path %>
+  <%= link_to 'Editar', edit_city_path(@city), class:"tableButton" %> |
+  <%= link_to 'Atrás', cities_path, class:"tableButton" %>
+
+</div>

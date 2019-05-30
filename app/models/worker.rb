@@ -5,4 +5,5 @@ class Worker < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, :last_name, :gender , presence: true
   belongs_to :role
+  belongs_to :load
 end

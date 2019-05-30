@@ -1,29 +1,42 @@
+<%= render "partials/nav"%>
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Status</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr class="tableTitle">
+            <th>Status&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th>Fecha Status&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<h1>Statuses</h1>
+        <tbody>
+          <% @statuses.each do |status| %>
+            <tr  class="tableInfo">
+              <td><%= status.status %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= status.status_date %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Ver', status, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Editar', edit_status_path(status), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= button_to 'Eliminar', status, class:"tableButton", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
 
-<table>
-  <thead>
-    <tr>
-      <th>Status</th>
-      <th>Status date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <br>
 
-  <tbody>
-    <% @statuses.each do |status| %>
-      <tr>
-        <td><%= status.status %></td>
-        <td><%= status.status_date %></td>
-        <td><%= link_to 'Show', status %></td>
-        <td><%= link_to 'Edit', edit_status_path(status) %></td>
-        <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Status', new_status_path %>
+      <%= link_to 'Nuevo Status', new_status_path, class:"tableButtonNew"  %>
+    </div>
+  </div>
+</div>

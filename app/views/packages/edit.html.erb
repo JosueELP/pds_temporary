@@ -1,6 +1,10 @@
-<h1>Editing Package</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editing Paquete</h1>
 
-<%= render 'form', package: @package %>
+  <%= render 'form', package: @package %>
 
-<%= link_to 'Show', @package %> |
-<%= link_to 'Back', packages_path %>
+  <%= link_to 'Ver', @package, class:"tableButton" %> |
+  <%= link_to 'Atrás', packages_path, class:"tableButton" %>
+
+</div>

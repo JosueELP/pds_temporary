@@ -1,6 +1,10 @@
-<h1>Editing Payment Method</h1>
+<%= render "partials/nav"%>
+<div class="container">
+  <h1>Editar Método de Pago</h1>
 
-<%= render 'form', payment_method: @payment_method %>
+  <%= render 'form', payment_method: @payment_method %>
 
-<%= link_to 'Show', @payment_method %> |
-<%= link_to 'Back', payment_methods_path %>
+  <%= link_to 'Ver', @payment_method, class:"tableButton"  %> |
+  <%= link_to 'Atrás', payment_methods_path, class:"tableButton"  %>
+
+</div>

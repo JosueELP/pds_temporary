@@ -1,14 +1,23 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row text-center">
+    <div class="col">
+      <h1>Consulta de Status</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @status.status %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Status:</strong>
+    <%= @status.status %>
+  </p>
 
-<p>
-  <strong>Status date:</strong>
-  <%= @status.status_date %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Fecha de Status:</strong>
+    <%= @status.status_date %>
+  </p>
 
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+  <%= link_to 'Editar', edit_status_path(@status), class:"tableButton" %> |
+  <%= link_to 'Atrás', statuses_path, class:"tableButton" %>
+
+</div>

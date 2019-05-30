@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Consulta de Estado</h1>
+    </div>
+  </div>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>State name:</strong>
-  <%= @state.state_name %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Estado: </strong>
+    <%= @state.state_name %>
+  </p>
 
-<%= link_to 'Edit', edit_state_path(@state) %> |
-<%= link_to 'Back', states_path %>
+  <%= link_to 'Editar', edit_state_path(@state), class:"tableButton"  %> |
+  <%= link_to 'Atrás', states_path, class:"tableButton"  %>
+
+</div>

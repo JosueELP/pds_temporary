@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%= render "partials/nav"%>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Consulta de Paquete</h1>
+    </div>
+  </div>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @package.quantity %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @package.description %>
-</p>
+  <p class="tableInfo">
+    <strong class="tableTitle">Cantidad:</strong>
+    <%= @package.quantity %>
+  </p>
 
-<%= link_to 'Edit', edit_package_path(@package) %> |
-<%= link_to 'Back', packages_path %>
+  <p class="tableInfo">
+    <strong class="tableTitle">Descripción:</strong>
+    <%= @package.description %>
+  </p>
+
+  <%= link_to 'Editar', edit_package_path(@package), class:"tableButton" %> |
+  <%= link_to 'Atrás', packages_path, class:"tableButton" %>
+
+</div>
