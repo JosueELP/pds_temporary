@@ -1,5 +1,5 @@
 class Load < ApplicationRecord
-  has_many :branch_offices
-  has_many :workers
+  belongs_to :branch_office
+  belongs_to :worker
   has_many :vehicles
 end

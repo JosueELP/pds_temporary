@@ -48,22 +48,42 @@
         <%= f.text_field :phone, autocomplete: "phone-number" %>
       </div>
 
-      <div class="field">
-        <p style="color:gray;">ROL</p>
-      </div>
-      <div class="dropdown">
-        <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona un rol</a>
-        <div class="dropdown-menu">
-          <% @roles = Role.all %>
-          <% @roles.each do |roles| %>
-            <div class="col">
-              <%= f.radio_button :role_id, roles.id %>
-              <%= f.label :role_id, roles.role_name, :value => roles.id, :class=>"fieldTitle tableButton"%>
-            </div>
-          <% end %>
+      <div>
+        <div class="field">
+          <p style="color:gray;">ROL</p>
+        </div>
+        <div class="dropdown">
+          <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona un rol</a>
+          <div class="dropdown-menu">
+            <% @roles = Role.all %>
+            <% @roles.each do |roles| %>
+              <div class="col">
+                <%= f.radio_button :role_id, roles.id %>
+                <%= f.label :role_id, roles.role_name, :value => roles.id, :class=>"fieldTitle tableButton"%>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
-      
+
+      <div>
+        <div class="field">
+            <p style="color:gray;">DIRECCION</p>
+        </div>
+        <div class="dropdown">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una dirección</a>
+            <div class="dropdown-menu">
+              <% @addresses = Address.all %>
+              <% @addresses.each do |addresses| %>
+                <div class="col">
+                  <%= f.radio_button :address_id, addresses.id %>
+                  <%= f.label :address_id, addresses.id, :value => addresses.id, :class=>"fieldTitle tableButton"%>
+                </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+
       <div class="field">
         <p style="color:white;">Género:</p>
       </div>

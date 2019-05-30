@@ -21,6 +21,57 @@
     <%= form.text_field :client_lastname %>
   </div>
 
+  <div>
+    <div class="field">
+      <p style="color:gray;">Dirección</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una Dirección</a>
+      <div class="dropdown-menu">
+        <% @address.each do |address| %>
+          <div class="col">
+            <%= form.radio_button :address_id, address.id %>
+            <%= form.label :address_id, address.id, :value => address.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="field">
+      <p style="color:gray;">Información de Envio</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una Dirección de envio</a>
+      <div class="dropdown-menu">
+        <% @shipping.each do |shipping| %>
+          <div class="col">
+            <%= form.radio_button :shipping_information_id, shipping.id %>
+            <%= form.label :shipping_information_id, shipping.id, :value => shipping.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="field">
+      <p style="color:gray;">Información de Pago</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona Información fiscal</a>
+      <div class="dropdown-menu">
+        <% @billing.each do |billing| %>
+          <div class="col">
+            <%= form.radio_button :billing_information_id, billing.id %>
+            <%= form.label :billing_information_id, billing.rfc, :value => billing.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="actions">
     <br>
     <%= form.submit"Guardar",class:"btn bigBtn" %>

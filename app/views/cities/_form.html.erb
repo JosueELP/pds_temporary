@@ -16,6 +16,23 @@
     <%= form.text_field :city_name %>
   </div>
 
+  <div>
+    <div class="field">
+      <p style="color:gray;">Estado</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione un Estado</a>
+      <div class="dropdown-menu">
+        <% @states.each do |states| %>
+          <div class="col">
+            <%= form.radio_button :state_id, states.id %>
+            <%= form.label :state_id, states.state_name, :value => states.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit"Guardar",class:"btn bigBtn" %>
   </div>

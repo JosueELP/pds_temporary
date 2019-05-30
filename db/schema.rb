@@ -14,12 +14,14 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
-    t.string "number"
+    t.integer "number"
     t.string "colony"
-    t.string "interior_number"
+    t.integer "interior_number"
     t.integer "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "city_id"
+    t.index ["city_id"], name: "index_addresses_on_city_id"
   end
 
   create_table "billing_informations", force: :cascade do |t|
@@ -35,17 +37,32 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
     t.string "branch_office_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "address_id"
+    t.index ["address_id"], name: "index_branch_offices_on_address_id"
   end
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "state_id"
+    t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
   create_table "clients", force: :cascade do |t|
     t.string "client_name"
     t.string "client_lastname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "billing_information_id"
+    t.integer "shipping_information_id"
+    t.integer "address_id"
+    t.index ["address_id"], name: "index_clients_on_address_id"
+    t.index ["billing_information_id"], name: "index_clients_on_billing_information_id"
+    t.index ["shipping_information_id"], name: "index_clients_on_shipping_information_id"
+  end
+
+  create_table "load_pick_ups", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,18 +76,17 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
     t.date "load_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "branch_office_id"
+    t.integer "import_branch_office_id"
     t.integer "export_branch_office_id"
     t.integer "worker_id"
     t.integer "vehicle_id"
-    t.index ["branch_office_id"], name: "index_loads_on_branch_office_id"
     t.index ["export_branch_office_id"], name: "index_loads_on_export_branch_office_id"
+    t.index ["import_branch_office_id"], name: "index_loads_on_import_branch_office_id"
     t.index ["vehicle_id"], name: "index_loads_on_vehicle_id"
     t.index ["worker_id"], name: "index_loads_on_worker_id"
   end
 
   create_table "packages", force: :cascade do |t|
-    t.integer "quantity"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -83,7 +99,6 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
   end
 
   create_table "pick_ups", force: :cascade do |t|
-    t.string "is_done"
     t.date "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -103,23 +118,27 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
 
   create_table "shipping_informations", force: :cascade do |t|
     t.integer "phone"
-    t.string "aditional_info"
+    t.string "additional_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "address_id"
     t.index ["address_id"], name: "index_shipping_informations_on_address_id"
   end
 
+  create_table "shipping_packages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shippings", force: :cascade do |t|
     t.date "expedition_date"
     t.date "delivery_date"
-    t.string "ship_type"
+    t.string "type"
     t.string "authorization_sign"
     t.string "delivery_sign"
     t.integer "package_number"
     t.float "delivery_cost"
     t.float "insurance_cost"
-    t.float "pick_up_cost"
     t.float "taxes"
     t.float "final_cost"
     t.datetime "created_at", null: false
@@ -146,7 +165,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
     t.integer "year"
     t.string "model"
     t.string "color"
-    t.string "license_plate"
+    t.string "licence_plate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

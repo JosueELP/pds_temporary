@@ -10,22 +10,26 @@ class AddressesController < ApplicationController
   # GET /addresses/1
   # GET /addresses/1.json
   def show
+    @address = Address.find(params[:id])
+    @cities = City.find(@address.city_id)
   end
 
   # GET /addresses/new
   def new
     @address = Address.new
+    @cities = City.all
   end
 
   # GET /addresses/1/edit
   def edit
+    @cities = City.all
   end
 
   # POST /addresses
   # POST /addresses.json
   def create
     @address = Address.new(address_params)
-
+    @cities = City.all
     respond_to do |format|
       if @address.save
         format.html { redirect_to @address, notice: 'La dirección se guardó correctamente.' }
@@ -40,6 +44,7 @@ class AddressesController < ApplicationController
   # PATCH/PUT /addresses/1
   # PATCH/PUT /addresses/1.json
   def update
+    @cities = City.all
     respond_to do |format|
       if @address.update(address_params)
         format.html { redirect_to @address, notice: 'La dirección se actualizó correctamente.' }
@@ -69,6 +74,6 @@ class AddressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def address_params
-      params.require(:address).permit(:street, :number, :colony, :interior_number, :postal_code)
+      params.require(:address).permit(:street, :number, :colony, :interior_number, :postal_code, :city_id)
     end
 end

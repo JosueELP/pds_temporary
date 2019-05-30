@@ -1,5 +1,5 @@
 class PickUp < ApplicationRecord
-  has_many :clients
+  belongs_to :client
   has_many :addresses
-  has_many :branch_offices
+  belongs_to :branch_office
 end

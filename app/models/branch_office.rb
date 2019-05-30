@@ -1,5 +1,7 @@
 class BranchOffice < ApplicationRecord
-  belongs_to :status
-  belongs_to :pick_up
-  belongs_to :load
+  has_many :statuses
+  has_many :pick_up
+  has_many :loads
+  belongs_to :address
+  has_many :workers
 end

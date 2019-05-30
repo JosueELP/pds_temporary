@@ -32,6 +32,16 @@
     <%= @address.postal_code %>
   </p>
 
+  <p class="tableInfo">
+    <strong class="tableTitle">Ciudad:</strong>
+    <%= @cities.city_name %>
+  </p>
+
+  <p class="tableInfo">
+    <strong class="tableTitle">Estado:</strong>
+    <%= @cities.state.state_name %>
+  </p>
+
   <%= link_to 'Editar', edit_address_path(@address), class:"tableButton" %> |
   <%= link_to 'Atrás', addresses_path, class:"tableButton" %>
 

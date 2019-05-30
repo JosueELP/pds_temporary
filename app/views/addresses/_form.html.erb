@@ -36,6 +36,23 @@
     <%= form.number_field :postal_code %>
   </div>
 
+  <div>
+    <div class="field">
+      <p style="color:gray;">Ciudad</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una ciudad</a>
+      <div class="dropdown-menu">
+        <% @cities.each do |cities| %>
+          <div class="col">
+            <%= form.radio_button :city_id, cities.id %>
+            <%= form.label :city_id, cities.city_name + ", " + cities.state.state_name, :value => cities.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit"Guardar",class:"btn bigBtn"%>
   </div>
