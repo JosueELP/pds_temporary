@@ -18,7 +18,24 @@
 
   <div class="field">
     <%= form.label :información_adicional %>
-    <%= form.text_field :aditional_info %>
+    <%= form.text_field :additional_info %>
+  </div>
+
+  <div>
+    <div class="field">
+      <p style="color:gray;">Dirección</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Dirección</a>
+      <div class="dropdown-menu">
+        <% @address.each do |address| %>
+          <div class="col">
+            <%= form.radio_button :address_id, address.id %>
+            <%= form.label :address_id, address.street + ", " + address.number.to_s + ", " + address.colony + ", " + address.postal_code.to_s, :value => address.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="actions">

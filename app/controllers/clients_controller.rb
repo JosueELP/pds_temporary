@@ -10,6 +10,7 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @clients = Client.all
   end
 
   # GET /clients/new
@@ -22,6 +23,9 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit
+    @address = Address.all
+    @shipping = ShippingInformation.all
+    @billing = BillingInformation.all
   end
 
   # POST /clients
@@ -45,6 +49,9 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
+    @address = Address.all
+    @shipping = ShippingInformation.all
+    @billing = BillingInformation.all
     respond_to do |format|
       if @client.update(client_params)
         format.html { redirect_to @client, notice: 'El cliente se actualizó correctamente.' }

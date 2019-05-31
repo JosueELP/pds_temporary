@@ -36,7 +36,7 @@
         <% @address.each do |address| %>
           <div class="col">
             <%= form.radio_button :address_id, address.id %>
-            <%= form.label :address_id, address.id, :value => address.id, :class=>"fieldTitle tableButton"%>
+            <%= form.label :address_id, address.street + ", " + address.number.to_s + ", " + address.colony + ", " + address.postal_code.to_s, :value => address.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>

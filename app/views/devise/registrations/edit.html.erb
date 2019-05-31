@@ -68,20 +68,38 @@
 
       <div>
         <div class="field">
-            <p style="color:gray;">DIRECCION</p>
-        </div>
-        <div class="dropdown">
-            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una dirección</a>
+            <p style="color:gray;">Sucursal</p>
+          </div>
+          <div class="dropdown">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Sucursal</a>
             <div class="dropdown-menu">
-              <% @addresses = Address.all %>
-              <% @addresses.each do |addresses| %>
+              <% @branch = BranchOffice.all %>
+              <% @branch.each do |branch| %>
                 <div class="col">
-                  <%= f.radio_button :address_id, addresses.id %>
-                  <%= f.label :address_id, addresses.id, :value => addresses.id, :class=>"fieldTitle tableButton"%>
+                  <%= f.radio_button :branch_office_id, branch.id %>
+                  <%= f.label :branch_office_id, branch.branch_office_name + ", " + branch.branch_office_phone.to_s + ", " + branch.branch_office_email, :value => branch.id, :class=>"fieldTitle tableButton"%>
                 </div>
               <% end %>
             </div>
-        </div>
+          </div>
+      </div>
+
+      <div>
+        <div class="field">
+            <p style="color:gray;">Dirección</p>
+          </div>
+          <div class="dropdown">
+            <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Dirección</a>
+            <div class="dropdown-menu">
+              <% @address = Address.all %>
+              <% @address.each do |address| %>
+                <div class="col">
+                  <%= f.radio_button :address_id, address.id %>
+                  <%= f.label :address_id, address.street + ", " + address.number.to_s + ", " + address.colony + ", " + address.postal_code.to_s, :value => address.id, :class=>"fieldTitle tableButton"%>
+                </div>
+              <% end %>
+            </div>
+          </div>
       </div>
 
       <div class="field">

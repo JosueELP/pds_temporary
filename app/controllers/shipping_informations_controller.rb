@@ -15,17 +15,19 @@ class ShippingInformationsController < ApplicationController
   # GET /shipping_informations/new
   def new
     @shipping_information = ShippingInformation.new
+    @address = Address.all
   end
 
   # GET /shipping_informations/1/edit
   def edit
+    @address = Address.all
   end
 
   # POST /shipping_informations
   # POST /shipping_informations.json
   def create
     @shipping_information = ShippingInformation.new(shipping_information_params)
-
+    @address = Address.all
     respond_to do |format|
       if @shipping_information.save
         format.html { redirect_to @shipping_information, notice: 'La información de envío se guardó correctamente.' }
@@ -40,6 +42,7 @@ class ShippingInformationsController < ApplicationController
   # PATCH/PUT /shipping_informations/1
   # PATCH/PUT /shipping_informations/1.json
   def update
+    @address = Address.all
     respond_to do |format|
       if @shipping_information.update(shipping_information_params)
         format.html { redirect_to @shipping_information, notice: 'La información de envío se actualizó correctamente.' }
@@ -69,6 +72,6 @@ class ShippingInformationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipping_information_params
-      params.require(:shipping_information).permit(:phone, :aditional_info)
+      params.require(:shipping_information).permit(:phone, :additional_info, :address_id)
     end
 end

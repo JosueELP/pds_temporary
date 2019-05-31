@@ -1,4 +1,4 @@
 class ShippingInformation < ApplicationRecord
-  has_many :addresses
+  belongs_to :address
   has_many :clients
 end

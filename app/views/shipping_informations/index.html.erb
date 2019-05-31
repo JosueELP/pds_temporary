@@ -21,7 +21,7 @@
           <% @shipping_informations.each do |shipping_information| %>
             <tr class="tableInfo">
               <td><%= shipping_information.phone %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-              <td><%= shipping_information.aditional_info %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping_information.additional_info %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
               <td><%= link_to 'Ver', shipping_information, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
               <td><%= link_to 'Editar', edit_shipping_information_path(shipping_information), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
               <td><%= button_to 'Eliminar', shipping_information, class:"tableButton", method: :delete, data: { confirm: 'Are you sure?' } %></td>

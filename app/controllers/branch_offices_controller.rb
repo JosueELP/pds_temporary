@@ -20,6 +20,7 @@ class BranchOfficesController < ApplicationController
 
   # GET /branch_offices/1/edit
   def edit
+    @address = Address.all
   end
 
   # POST /branch_offices
@@ -41,6 +42,7 @@ class BranchOfficesController < ApplicationController
   # PATCH/PUT /branch_offices/1
   # PATCH/PUT /branch_offices/1.json
   def update
+    @address = Address.all
     respond_to do |format|
       if @branch_office.update(branch_office_params)
         format.html { redirect_to @branch_office, notice: 'La sucursal se actualizó correctamente.' }

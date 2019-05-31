@@ -1,6 +1,6 @@
 class Address < ApplicationRecord
-  belongs_to :shipping_information
-  belongs_to :pick_up
+  has_many :shipping_informations
+  has_many :pick_ups
   belongs_to :city
   has_many :branch_offices
   has_many :workers

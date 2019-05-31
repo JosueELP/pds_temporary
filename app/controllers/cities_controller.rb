@@ -20,6 +20,7 @@ class CitiesController < ApplicationController
 
   # GET /cities/1/edit
   def edit
+    @states = State.all
   end
 
   # POST /cities
@@ -41,6 +42,7 @@ class CitiesController < ApplicationController
   # PATCH/PUT /cities/1
   # PATCH/PUT /cities/1.json
   def update
+    @states = State.all
     respond_to do |format|
       if @city.update(city_params)
         format.html { redirect_to @city, notice: 'City was successfully updated.' }

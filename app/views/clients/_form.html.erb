@@ -26,12 +26,12 @@
       <p style="color:gray;">Dirección</p>
     </div>
     <div class="dropdown">
-      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una Dirección</a>
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Dirección</a>
       <div class="dropdown-menu">
         <% @address.each do |address| %>
           <div class="col">
             <%= form.radio_button :address_id, address.id %>
-            <%= form.label :address_id, address.id, :value => address.id, :class=>"fieldTitle tableButton"%>
+            <%= form.label :address_id, address.street + ", " + address.number.to_s + ", " + address.colony + ", " + address.postal_code.to_s, :value => address.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>
@@ -43,12 +43,12 @@
       <p style="color:gray;">Información de Envio</p>
     </div>
     <div class="dropdown">
-      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una Dirección de envio</a>
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Selecciona una Información de envio</a>
       <div class="dropdown-menu">
         <% @shipping.each do |shipping| %>
           <div class="col">
             <%= form.radio_button :shipping_information_id, shipping.id %>
-            <%= form.label :shipping_information_id, shipping.id, :value => shipping.id, :class=>"fieldTitle tableButton"%>
+            <%= form.label :shipping_information_id, shipping.phone.to_s + ", " + shipping.additional_info, :value => shipping.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>
@@ -65,7 +65,7 @@
         <% @billing.each do |billing| %>
           <div class="col">
             <%= form.radio_button :billing_information_id, billing.id %>
-            <%= form.label :billing_information_id, billing.rfc, :value => billing.id, :class=>"fieldTitle tableButton"%>
+            <%= form.label :billing_information_id, billing.rfc + ", " + billing.email, :value => billing.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>
