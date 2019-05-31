@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_213351) do
+ActiveRecord::Schema.define(version: 2019_05_30_221619) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street"
@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
   create_table "load_shippings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "load_id"
+    t.integer "shipping_id"
+    t.index ["load_id"], name: "index_load_shippings_on_load_id"
+    t.index ["shipping_id"], name: "index_load_shippings_on_shipping_id"
   end
 
   create_table "loads", force: :cascade do |t|
@@ -86,6 +90,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "shipping_id"
+    t.index ["shipping_id"], name: "index_packages_on_shipping_id"
   end
 
   create_table "payment_methods", force: :cascade do |t|
@@ -136,6 +142,22 @@ ActiveRecord::Schema.define(version: 2019_05_30_213351) do
     t.float "final_cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "address_id"
+    t.integer "payment_method_id"
+    t.integer "status_id"
+    t.integer "worker_id"
+    t.integer "sender_client_id"
+    t.integer "adressee_client_id"
+    t.integer "delivery_branch_office_id"
+    t.integer "expedition_branch_office_id"
+    t.index ["address_id"], name: "index_shippings_on_address_id"
+    t.index ["adressee_client_id"], name: "index_shippings_on_adressee_client_id"
+    t.index ["delivery_branch_office_id"], name: "index_shippings_on_delivery_branch_office_id"
+    t.index ["expedition_branch_office_id"], name: "index_shippings_on_expedition_branch_office_id"
+    t.index ["payment_method_id"], name: "index_shippings_on_payment_method_id"
+    t.index ["sender_client_id"], name: "index_shippings_on_sender_client_id"
+    t.index ["status_id"], name: "index_shippings_on_status_id"
+    t.index ["worker_id"], name: "index_shippings_on_worker_id"
   end
 
   create_table "states", force: :cascade do |t|

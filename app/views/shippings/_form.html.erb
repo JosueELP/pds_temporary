@@ -11,6 +11,121 @@
     </div>
   <% end %>
 
+    <div>
+    <div class="field">
+      <p style="color:gray;">Remitente</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Dirección</a>
+      <div class="dropdown-menu">
+        <% @clients.each do |clients| %>
+          <div class="col">
+            <%= form.radio_button :clients_id, clients.id %>
+            <%= form.label :adressee_client_id, clients.id, :value => clients.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="field">
+      <p style="color:gray;">Destinatario</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione un remitente</a>
+      <div class="dropdown-menu">
+        <% @clients.each do |clients| %>
+          <div class="col">
+            <%= form.radio_button :clients_id, clients.id %>
+            <%= form.label :delivery_branch_office_id, clients.id, :value => clients.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+    <div>
+    <div class="field">
+      <p style="color:gray;">Dirección</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una destinatario</a>
+      <div class="dropdown-menu">
+        <% @addresses.each do |addresses| %>
+          <div class="col">
+            <%= form.radio_button :address_id, addresses.id %>
+            <%= form.label :address_id, addresses.id, :value => addresses.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+    <div>
+    <div class="field">
+      <p style="color:gray;">Método de pago</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione el metodo de pago a usar</a>
+      <div class="dropdown-menu">
+        <% @payment_methods.each do |payment_methods| %>
+          <div class="col">
+            <%= form.radio_button :payment_method_id, payment_methods.id %>
+            <%= form.label :payment_method_id, payment_methods.id, :value => payment_methods.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+    <div>
+    <div class="field">
+      <p style="color:gray;">Estatus del pedido</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">El estado por defecto es: por enviar</a>
+      <div class="dropdown-menu">
+        <% @statuses.each do |statuses| %>
+          <div class="col">
+            <%= form.radio_button :status_id, statuses.id %>
+            <%= form.label :status_id, statuses.id, :value => statuses.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+    <div>
+    <div class="field">
+      <p style="color:gray;">Oficina de salida</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Elija la oficina desde donde sale el paquete</a>
+      <div class="dropdown-menu">
+        <% @branch_offices.each do |branch_offices| %>
+          <div class="col">
+            <%= form.radio_button :status_id, branch_offices.id %>
+            <%= form.label :expedition_branch_office_id, branch_offices.id, :value => branch_offices.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
+    <div>
+    <div class="field">
+      <p style="color:gray;">Oficina de llegada</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Elija la oficina a donde llega el paquete</a>
+      <div class="dropdown-menu">
+        <% @branch_offices.each do |branch_offices| %>
+          <div class="col">
+            <%= form.radio_button :status_id, branch_offices.id %>
+            <%= form.label :delivery_branch_office_id, branch_offices.id, :value => branch_offices.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="field">
     <%= form.label :Fecha_de_Expedicion %>
     <div class="selectors">

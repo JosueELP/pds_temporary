@@ -10,22 +10,27 @@ class PackagesController < ApplicationController
   # GET /packages/1
   # GET /packages/1.json
   def show
+    @packages = Package.find(params[:id])
+    @shippings = Shipping.find(@package.package_id)
   end
 
   # GET /packages/new
   def new
     @package = Package.new
+    @shippings = Shipping.all
+    
   end
 
   # GET /packages/1/edit
   def edit
+    @shippings = Shipping.all
   end
 
   # POST /packages
   # POST /packages.json
   def create
     @package = Package.new(package_params)
-
+    @shippings = Shipping.all
     respond_to do |format|
       if @package.save
         format.html { redirect_to @package, notice: 'Package was successfully created.' }
@@ -40,6 +45,7 @@ class PackagesController < ApplicationController
   # PATCH/PUT /packages/1
   # PATCH/PUT /packages/1.json
   def update
+    @shippings = Shipping.all
     respond_to do |format|
       if @package.update(package_params)
         format.html { redirect_to @package, notice: 'Package was successfully updated.' }

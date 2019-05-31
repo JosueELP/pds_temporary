@@ -4,4 +4,5 @@ class BranchOffice < ApplicationRecord
   has_many :loads
   belongs_to :address
   has_many :workers
+  belongs_to :shippings
 end

@@ -6,20 +6,33 @@ class ShippingsController < ApplicationController
   # GET /shippings.json
   def index
     @shippings = Shipping.all
+    
   end
 
   # GET /shippings/1
   # GET /shippings/1.json
   def show
+    shippings = Shipping.all
   end
 
   # GET /shippings/new
   def new
     @shipping = Shipping.new
+    @clients = Client.all
+    @addresses = Address.all
+    @payment_methods = PaymentMethod.all
+    @statuses = Status.all
+    @branch_offices = BranchOffice.all
   end
 
   # GET /shippings/1/edit
   def edit
+    
+    @clients = Client.all
+    @addresses = Address.all
+    @payment_methods = PaymentMethod.all
+    @statuses = Status.all
+    @branch_offices = BranchOffice.all
   end
 
   # POST /shippings
@@ -41,6 +54,12 @@ class ShippingsController < ApplicationController
   # PATCH/PUT /shippings/1
   # PATCH/PUT /shippings/1.json
   def update
+  
+    @clients = Client.all
+    @addresses = Address.all
+    @payment_methods = PaymentMethod.all
+    @statuses = Status.all
+    @branch_offices = BranchOffice.all
     respond_to do |format|
       if @shipping.update(shipping_params)
         format.html { redirect_to @shipping, notice: 'El envío se actualizó correctamente.' }

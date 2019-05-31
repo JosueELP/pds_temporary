@@ -5,4 +5,5 @@ class Address < ApplicationRecord
   has_many :branch_offices
   has_many :workers
   has_many :clients
+  belongs_to :shippings
 end

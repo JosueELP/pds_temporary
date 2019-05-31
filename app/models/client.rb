@@ -3,4 +3,5 @@ class Client < ApplicationRecord
   belongs_to :billing_information
   belongs_to :shipping_information
   belongs_to :address
+  belongs_to :shippings
 end

@@ -8,4 +8,5 @@ class Worker < ApplicationRecord
   has_many :loads
   belongs_to :address
   belongs_to :branch_office
+  belongs_to :shippings
 end
