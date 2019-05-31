@@ -20,8 +20,8 @@
       <div class="dropdown-menu">
         <% @clients.each do |clients| %>
           <div class="col">
-            <%= form.radio_button :clients_id, clients.id %>
-            <%= form.label :adressee_client_id, clients.client_name, :value => clients.id, :class=>"fieldTitle tableButton"%>
+            <%= form.radio_button :sender_client_id, clients.id %>
+            <%= form.label :sender_client_id, clients.client_name, :value => clients.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>
@@ -34,10 +34,10 @@
     <div class="dropdown">
       <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione un destinatario</a>
       <div class="dropdown-menu">
-        <% @clients.each do |clients| %>
+        <% @clients.each do |client| %>
           <div class="col">
-            <%= form.radio_button :clients_id, clients.id %>
-            <%= form.label :delivery_branch_office_id, clients.client_name, :value => clients.id, :class=>"fieldTitle tableButton"%>
+            <%= form.radio_button :adressee_client_id, client.id %>
+            <%= form.label :adressee_client_id, client.client_name, :value => client.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>
@@ -69,6 +69,7 @@
         <% @payment_methods.each do |payment_methods| %>
           <div class="col">
             <%= form.radio_button :payment_method_id, payment_methods.id %>
+            <%= form.label :payment_method_id, payment_methods.name, :value => payment_methods.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>
@@ -91,16 +92,17 @@
     </div>
   </div>
   </div>
+
     <div>
     <div class="field">
-      <p style="color:gray;">Oficina de salida</p>
+      <p style="color:gray;">Oficina de origen</p>
     </div>
     <div class="dropdown">
       <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Elija la oficina desde donde sale el paquete</a>
       <div class="dropdown-menu">
         <% @branch_offices.each do |branch_offices| %>
           <div class="col">
-            <%= form.radio_button :status_id, branch_offices.id %>
+            <%= form.radio_button :expedition_branch_office_id, branch_offices.id %>
             <%= form.label :expedition_branch_office_id, branch_offices.branch_office_name, :value => branch_offices.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
@@ -110,15 +112,15 @@
   </div>
     <div>
     <div class="field">
-      <p style="color:gray;">Oficina de llegada</p>
+      <p style="color:gray;">Oficina de destino</p>
     </div>
     <div class="dropdown">
       <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Elija la oficina a donde llega el paquete</a>
       <div class="dropdown-menu">
-        <% @branch_offices.each do |branch_offices| %>
+        <% @branch_office.each do |branch_office| %>
           <div class="col">
-            <%= form.radio_button :status_id, branch_offices.id %>
-            <%= form.label :delivery_branch_office_id, branch_offices.branch_office_name, :value => branch_offices.id, :class=>"fieldTitle tableButton"%>
+            <%= form.radio_button :delivery_branch_office_id, branch_office.id %>
+            <%= form.label :delivery_branch_office_id, branch_office.branch_office_name, :value => branch_office.id, :class=>"fieldTitle tableButton"%>
           </div>
         <% end %>
       </div>
@@ -133,7 +135,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :delivery_date %>
+    <%= form.label :Fecha_de_entrega %>
     <div class="selectors">
       <%= form.date_select :delivery_date, class:"selector" %>
     </div>
@@ -151,38 +153,55 @@
   </div>
 
   <div class="field">
-    <%= form.label :delivery_sign %>
+    <%= form.label :Firma_de_entrega %>
     <%= form.text_field :delivery_sign %>
   </div>
 
   <div class="field">
-    <%= form.label :package_number %>
+    <%= form.label :numero_de_paquetes %>
     <%= form.number_field :package_number %>
   </div>
 
   <div class="field">
-    <%= form.label :delivery_cost %>
+    <%= form.label :costo_de_envío %>
     <%= form.text_field :delivery_cost %>
   </div>
 
   <div class="field">
-    <%= form.label :insurance_cost %>
+    <%= form.label :costo_de_seguro %>
     <%= form.text_field :insurance_cost %>
   </div>
 
   <div class="field">
-    <%= form.label :pick_up_cost %>
+    <%= form.label :costo_de_recolección %>
     <%= form.text_field :pick_up_cost %>
   </div>
 
   <div class="field">
-    <%= form.label :taxes %>
+    <%= form.label :iva %>
     <%= form.text_field :taxes %>
   </div>
 
   <div class="field">
-    <%= form.label :final_cost %>
+    <%= form.label :costo_final %>
     <%= form.text_field :final_cost %>
+  </div>
+
+  <div>
+    <div class="field">
+      <p style="color:gray;">Documentador</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione un trabajador</a>
+      <div class="dropdown-menu">
+        <% @worker.each do |worker| %>
+          <div class="col">
+            <%= form.radio_button :worker_id, worker.id %>
+            <%= form.label :worker_id, worker.name + ' ' + worker.last_name, :value => worker.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="actions">

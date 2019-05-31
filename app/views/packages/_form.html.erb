@@ -17,28 +17,28 @@
   </div>
 
 
-  
-    <div>
-    <div class="field">
-      <p style="color:gray;">paquete</p>
-    </div>
-    <div class="dropdown">
-      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Dirección</a>
-      <div class="dropdown-menu">
-        <% @shippings.each do |shippings| %>
-          <div class="col">
-            <%= form.radio_button :shipping_id, shipping.id %>
-            <%= form.label :shipping_id, shipping.id, :value => shipping.id, :class=>"fieldTitle tableButton"%>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
   <div class="field">
     <%= form.label :descripción %>
     <%= form.text_field :description %>
   </div>
+
+  <div>
+  <div class="field">
+    <p style="color:gray;">Envío</p>
+  </div>
+  <div class="dropdown">
+    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione el envío</a>
+    <div class="dropdown-menu">
+      <% @shippings.each do |shippings| %>
+        <div class="col">
+          <%= form.radio_button :shipping_id, shipping.id %>
+          <%= form.label :shipping_id, shipping.id, :value => shipping.id, :class=>"fieldTitle tableButton"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
   <div class="actions">
     <%= form.submit"Guardar",class:"btn bigBtn" %>
   </div>

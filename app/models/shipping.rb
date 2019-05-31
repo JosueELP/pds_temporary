@@ -1,11 +1,10 @@
 class Shipping < ApplicationRecord
-    belongs_to :addresses
-    belongs_to :clients
-    belongs_to :payment_methods
-    belongs_to :statuses
-    belongs_to :workers
-    belongs_to :branch_offices
-    belongs_to :packages
-    belongs_to :load_shipping
+    belongs_to :address
+    belongs_to :client, optional: true
+    belongs_to :payment_method
+    belongs_to :status
+    belongs_to :worker
+    belongs_to :branch_office, optional: true
     has_many :load, through: :load_shipping
+    has_many :load_shippings
 end

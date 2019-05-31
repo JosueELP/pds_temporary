@@ -11,14 +11,13 @@ class PackagesController < ApplicationController
   # GET /packages/1.json
   def show
     @packages = Package.find(params[:id])
-    @shippings = Shipping.find(@package.package_id)
   end
 
   # GET /packages/new
   def new
     @package = Package.new
     @shippings = Shipping.all
-    
+
   end
 
   # GET /packages/1/edit

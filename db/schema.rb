@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_221619) do
 
   create_table "shipping_informations", force: :cascade do |t|
     t.integer "phone"
-    t.string "aditional_info"
+    t.string "additional_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "address_id"
@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_221619) do
     t.string "authorization_sign"
     t.string "delivery_sign"
     t.integer "package_number"
-    t.float "deliversy_cost"
+    t.float "delivery_cost"
     t.float "insurance_cost"
     t.float "pick_up_cost"
     t.float "taxes"

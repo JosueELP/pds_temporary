@@ -22,6 +22,9 @@ class PickUpsController < ApplicationController
 
   # GET /pick_ups/1/edit
   def edit
+    @address=Address.all
+    @client=Client.all
+    @branch_office=BranchOffice.all
   end
 
   # POST /pick_ups
@@ -45,6 +48,9 @@ class PickUpsController < ApplicationController
   # PATCH/PUT /pick_ups/1
   # PATCH/PUT /pick_ups/1.json
   def update
+    @address=Address.all
+    @client=Client.all
+    @branch_office=BranchOffice.all
     respond_to do |format|
       if @pick_up.update(pick_up_params)
         format.html { redirect_to @pick_up, notice: 'La recolección se actualizó correctamente.' }

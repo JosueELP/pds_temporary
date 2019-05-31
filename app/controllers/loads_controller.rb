@@ -23,6 +23,11 @@ class LoadsController < ApplicationController
 
   # GET /loads/1/edit
   def edit
+    @load = Load.new
+    @client=Client.all
+    @branch_office=BranchOffice.all
+    @worker=Worker.all
+    @vehicle=Vehicle.all
   end
 
   # POST /loads
@@ -47,6 +52,11 @@ class LoadsController < ApplicationController
   # PATCH/PUT /loads/1
   # PATCH/PUT /loads/1.json
   def update
+    @load = Load.new
+    @client=Client.all
+    @branch_office=BranchOffice.all
+    @worker=Worker.all
+    @vehicle=Vehicle.all
     respond_to do |format|
       if @load.update(load_params)
         format.html { redirect_to @load, notice: 'La carga se actualizó correctamente.' }

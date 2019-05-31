@@ -6,7 +6,7 @@ class Worker < ApplicationRecord
   validates :name, :last_name, :gender , presence: true
   belongs_to :role
   has_many :loads
-  belongs_to :address
-  belongs_to :branch_office
-  belongs_to :shippings
+  belongs_to :address, optional: true
+  belongs_to :branch_office, optional: true
+  has_many :shippings
 end

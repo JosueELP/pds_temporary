@@ -20,6 +20,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses/1/edit
   def edit
+    @branch_office = BranchOffice.all
   end
 
   # POST /statuses

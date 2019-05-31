@@ -6,48 +6,56 @@
       <h1>Envíos</h1>
     </div>
   </div>
-  <table>
-    <thead>
-      <tr class="tableTitle">
-        <th>Fecha de Expedición</th>
-        <th>Fecha de Entrega</th>
-        <th>Tipo</th>
-        <th>Firma de autorización</th>
-        <th>Firma de entrega</th>
-        <th>No. paquetes</th>
-        <th>Costo de envío</th>
-        <th>Costo seguro</th>
-        <th>Costo recolección</th>
-        <th>IVA</th>
-        <th>Costo final</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <div class="row">
+    <div class="col">
+      <table>
+        <thead>
+          <tr class="tableTitle">
+            <th>Fecha de Expedición</th>
+            <th>Fecha de Entrega</th>
+            <th>Tipo</th>
+            <th>Firma de autorización</th>
+            <th>Firma de entrega</th>
+            <th>No. paquetes</th>
+            <th>Costo de envío</th>
+            <th>Costo seguro</th>
+            <th>Costo recolección</th>
+            <th>IVA</th>
+            <th>Costo final</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <% @shippings.each do |shipping| %>
-        <tr class="tableInfo">
-          <td><%= shipping.expedition_date %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.delivery_date %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.ship_type %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.authorization_sign %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.delivery_sign %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.package_number %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.delivery_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.insurance_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.pick_up_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.taxes %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= shipping.final_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= link_to 'Ver', shipping, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= link_to 'Editar', edit_shipping_path(shipping), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-          <td><%= button_to 'Eliminar', shipping, method: :delete, data: { confirm: 'Are you sure?' },class:"tableButton" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <tbody>
+          <% @shippings.each do |shipping| %>
+            <tr class="tableInfo">
+              <td><%= shipping.expedition_date %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.delivery_date %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.ship_type %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.authorization_sign %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.delivery_sign %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.package_number %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.delivery_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.insurance_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.pick_up_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.taxes %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= shipping.final_cost %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Ver', shipping, class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= link_to 'Editar', edit_shipping_path(shipping), class:"tableButton" %>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+              <td><%= button_to 'Eliminar', shipping, method: :delete, data: { confirm: 'Are you sure?' },class:"tableButton" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  <br>
+  <div class="row">
+    <div class="col">
+      <br>
 
-  <%= link_to 'Nuevo envío', new_shipping_path, class:"tableButtonNew" %>
+      <%= link_to 'Nuevo envío', new_shipping_path, class:"tableButtonNew" %>
+    </div>
+  </div>
 
 </div>

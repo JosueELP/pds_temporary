@@ -1,15 +1,12 @@
 class ShippingsController < ApplicationController
-  before_action :authenticate_worker!
   before_action :set_shipping, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_worker!
 
   # GET /shippings
   # GET /shippings.json
   def index
     @shippings = Shipping.all
-    
-  end
-  def initialize
-    
+
   end
 
   # GET /shippings/1
@@ -26,23 +23,37 @@ class ShippingsController < ApplicationController
     @payment_methods = PaymentMethod.all
     @statuses = Status.all
     @branch_offices = BranchOffice.all
+
+    @branch_office = BranchOffice.all
+    @worker=Worker.all
   end
 
   # GET /shippings/1/edit
   def edit
-    
+    @shipping = Shipping.new
     @clients = Client.all
     @addresses = Address.all
     @payment_methods = PaymentMethod.all
     @statuses = Status.all
     @branch_offices = BranchOffice.all
+
+    @branch_office = BranchOffice.all
+    @worker=Worker.all
+
   end
 
   # POST /shippings
   # POST /shippings.json
   def create
     @shipping = Shipping.new(shipping_params)
-    
+    @clients = Client.all
+    @addresses = Address.all
+    @payment_methods = PaymentMethod.all
+    @statuses = Status.all
+    @branch_offices = BranchOffice.all
+    @branch_office = BranchOffice.all
+
+    @worker=Worker.all
     respond_to do |format|
       if @shipping.save
         format.html { redirect_to @shipping, notice: 'El envío se guardó correctamente' }
@@ -57,12 +68,15 @@ class ShippingsController < ApplicationController
   # PATCH/PUT /shippings/1
   # PATCH/PUT /shippings/1.json
   def update
-  
+    @shipping = Shipping.new
     @clients = Client.all
     @addresses = Address.all
     @payment_methods = PaymentMethod.all
     @statuses = Status.all
     @branch_offices = BranchOffice.all
+
+    @branch_office = BranchOffice.all
+    @worker=Worker.all
     respond_to do |format|
       if @shipping.update(shipping_params)
         format.html { redirect_to @shipping, notice: 'El envío se actualizó correctamente.' }
@@ -92,6 +106,6 @@ class ShippingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shipping_params
-      params.require(:shipping).permit(:expedition_date, :delivery_date, :ship_type, :authorization_sign, :delivery_sign, :package_number, :delivery_cost, :insurance_cost, :pick_up_cost, :taxes, :final_cost)
+      params.require(:shipping).permit(:expedition_date, :delivery_date, :ship_type, :authorization_sign, :delivery_sign, :package_number, :delivery_cost, :insurance_cost, :pick_up_cost, :taxes, :final_cost, :sender_client_id, :adressee_client_id, :address_id, :payment_method_id, :status_id, :expedition_branch_office_id, :delivery_branch_office_id, :worker_id)
     end
 end
