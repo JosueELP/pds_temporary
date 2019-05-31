@@ -15,6 +15,10 @@ class LoadsController < ApplicationController
   # GET /loads/new
   def new
     @load = Load.new
+    @client=Client.all
+    @branch_office=BranchOffice.all
+    @worker=Worker.all
+    @vehicle=Vehicle.all
   end
 
   # GET /loads/1/edit
@@ -25,7 +29,10 @@ class LoadsController < ApplicationController
   # POST /loads.json
   def create
     @load = Load.new(load_params)
-
+    @client=Client.all
+    @branch_office=BranchOffice.all
+    @worker=Worker.all
+    @vehicle=Vehicle.all
     respond_to do |format|
       if @load.save
         format.html { redirect_to @load, notice: 'La carga se guardó correctamente.' }
@@ -69,6 +76,6 @@ class LoadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def load_params
-      params.require(:load).permit(:load_date)
+      params.require(:load).permit(:load_date, :branch_office_id, :export_branch_office_id, :worker_id, :vehicle_id)
     end
 end

@@ -38,6 +38,23 @@
     </div>
   </div>
 
+  <div>
+    <div class="field">
+      <p style="color:gray;">Dirección</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Dirección</a>
+      <div class="dropdown-menu">
+        <% @address.each do |address| %>
+          <div class="col">
+            <%= form.radio_button :address_id, address.id %>
+            <%= form.label :address_id, address.street + ' #' + address.number + ', '+address.colony, :value => address.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit"Guardar",class:"btn bigBtn" %>
   </div>

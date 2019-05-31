@@ -15,6 +15,9 @@ class PickUpsController < ApplicationController
   # GET /pick_ups/new
   def new
     @pick_up = PickUp.new
+    @address=Address.all
+    @client=Client.all
+    @branch_office=BranchOffice.all
   end
 
   # GET /pick_ups/1/edit
@@ -25,7 +28,9 @@ class PickUpsController < ApplicationController
   # POST /pick_ups.json
   def create
     @pick_up = PickUp.new(pick_up_params)
-
+    @address=Address.all
+    @client=Client.all
+    @branch_office=BranchOffice.all
     respond_to do |format|
       if @pick_up.save
         format.html { redirect_to @pick_up, notice: 'La recolección se guardó correctamente.' }
@@ -69,6 +74,6 @@ class PickUpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pick_up_params
-      params.require(:pick_up).permit(:is_done, :schedule)
+      params.require(:pick_up).permit(:is_done, :schedule, :client_id, :address_id, :branch_office_id)
     end
 end

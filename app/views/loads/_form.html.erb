@@ -18,6 +18,74 @@
     </div>
   </div>
 
+  <div>
+    <div class="field">
+      <p style="color:gray;">Sucursal de Destino</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Sucursal</a>
+      <div class="dropdown-menu">
+        <% @branch_office.each do |branch_office| %>
+          <div class="col">
+            <%= form.radio_button :export_branch_office_id, branch_office.id %>
+            <%= form.label :export_branch_office_id, branch_office.branch_office_name, :value => branch_office.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="field">
+      <p style="color:gray;">Sucursal de Origen</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione una Sucursal</a>
+      <div class="dropdown-menu">
+        <% @branch_office.each do |branch_office| %>
+          <div class="col">
+            <%= form.radio_button :branch_office_id, branch_office.id %>
+            <%= form.label :branch_office_id, branch_office.branch_office_name, :value => branch_office.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="field">
+      <p style="color:gray;">Chofer a Cargo</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione un trabajador</a>
+      <div class="dropdown-menu">
+        <% @worker.each do |worker| %>
+          <div class="col">
+            <%= form.radio_button :worker_id, worker.id %>
+            <%= form.label :worker_id, worker.name + ' ' + worker.last_name, :value => worker.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="field">
+      <p style="color:gray;">Vehículo de transporte</p>
+    </div>
+    <div class="dropdown">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Seleccione un vehículo</a>
+      <div class="dropdown-menu">
+        <% @vehicle.each do |vehicle| %>
+          <div class="col">
+            <%= form.radio_button :vehicle_id, vehicle.id %>
+            <%= form.label :vehicle_id, vehicle.brand + ' '+vehicle.model+ ' '+ vehicle.license_plate, :value => vehicle.id, :class=>"fieldTitle tableButton"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="actions">
     <%= form.submit"Guardar",class:"btn bigBtn" %>
   </div>

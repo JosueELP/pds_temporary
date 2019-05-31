@@ -15,6 +15,7 @@ class StatusesController < ApplicationController
   # GET /statuses/new
   def new
     @status = Status.new
+    @branch_office = BranchOffice.all
   end
 
   # GET /statuses/1/edit
@@ -25,6 +26,7 @@ class StatusesController < ApplicationController
   # POST /statuses.json
   def create
     @status = Status.new(status_params)
+    @branch_office = BranchOffice.all
 
     respond_to do |format|
       if @status.save
@@ -40,6 +42,7 @@ class StatusesController < ApplicationController
   # PATCH/PUT /statuses/1
   # PATCH/PUT /statuses/1.json
   def update
+    @branch_offices = BranchOffice.all
     respond_to do |format|
       if @status.update(status_params)
         format.html { redirect_to @status, notice: 'Status was successfully updated.' }
@@ -54,6 +57,7 @@ class StatusesController < ApplicationController
   # DELETE /statuses/1
   # DELETE /statuses/1.json
   def destroy
+    @branch_offices = BranchOffice.all
     @status.destroy
     respond_to do |format|
       format.html { redirect_to statuses_url, notice: 'Status was successfully destroyed.' }
@@ -69,6 +73,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:status, :status_date)
+      params.require(:status).permit(:status, :status_date, :branch_office_id)
     end
 end
