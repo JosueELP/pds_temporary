@@ -1,4 +1,4 @@
 class LoadShipping < ApplicationRecord
-    belongs_to :shipping
+    has_many :shipping
     belongs_to :load
 end

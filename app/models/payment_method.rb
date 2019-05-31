@@ -1,3 +1,3 @@
 class PaymentMethod < ApplicationRecord
-    belongs_to :shippings
+    has_many :shippings
 end

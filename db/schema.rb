@@ -135,7 +135,7 @@ ActiveRecord::Schema.define(version: 2019_05_30_221619) do
     t.string "authorization_sign"
     t.string "delivery_sign"
     t.integer "package_number"
-    t.float "delivery_cost"
+    t.float "deliversy_cost"
     t.float "insurance_cost"
     t.float "pick_up_cost"
     t.float "taxes"

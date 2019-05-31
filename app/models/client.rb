@@ -1,7 +1,7 @@
 class Client < ApplicationRecord
   has_many :pick_ups
-  belongs_to :billing_information
+  has_many :billing_information
   belongs_to :shipping_information
   belongs_to :address
-  belongs_to :shippings
+  has_many :shippings
 end

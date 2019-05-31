@@ -8,11 +8,14 @@ class ShippingsController < ApplicationController
     @shippings = Shipping.all
     
   end
+  def initialize
+    
+  end
 
   # GET /shippings/1
   # GET /shippings/1.json
   def show
-    shippings = Shipping.all
+    @shippings = Shipping.all
   end
 
   # GET /shippings/new
@@ -39,7 +42,7 @@ class ShippingsController < ApplicationController
   # POST /shippings.json
   def create
     @shipping = Shipping.new(shipping_params)
-
+    
     respond_to do |format|
       if @shipping.save
         format.html { redirect_to @shipping, notice: 'El envío se guardó correctamente' }
